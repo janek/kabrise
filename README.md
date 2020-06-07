@@ -1,97 +1,35 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Starter for the official Gatsby blog theme
-</h1>
+# gatsby-absurd
 
-Quickly get started using the Gatsby blog theme! This starter creates a new Gatsby site that is preconfigured to work with the [official Gatsby blog theme](https://www.npmjs.com/package/gatsby-theme-blog).
+An absurd Gatsby starter. The collection of illustrations, [absurd.design](https://absurd.design/) by [Diana Valeanu](https://twitter.com/diana_valeanu) is a very fascinating and beautiful project with some pretty thoughtful concepts. Experimentation on how that could be put together on a site ended up as this starter.
 
-## 🚀 Quick start
+[Live Demo](https://gatsby-absurd.netlify.com/)
 
-1.  **Create a Gatsby site.**
+## Installation
 
-    Use the Gatsby CLI to create a new site, specifying the blog theme starter.
+Install the dependencies:
 
-    ```shell
-    # create a new Gatsby site using the blog theme starter
-    gatsby new my-themed-blog https://github.com/gatsbyjs/gatsby-starter-blog-theme
-    ```
+### `yarn install`
 
-2.  **Start developing.**
+Run the development server:
 
-    Navigate into your new site’s directory and start it up.
+### `yarn dev`
 
-    ```shell
-    cd my-themed-blog/
-    gatsby develop
-    ```
+Production build to `/public`:
 
-3.  **Open the code and start customizing!**
+### `yarn build`
 
-    Your site is now running at `http://localhost:8000`!
+Cleanup cache (often fixes misc errors when run before `yarn dev`):
 
-    To get started, check out the guide to [using the Gatsby blog theme starter](https://gatsbyjs.org/docs/themes/using-a-gatsby-theme), or the longer, [more detailed tutorial](https://gatsbyjs.org/tutorial/using-a-theme).
+### `yarn clean`
 
-## 🧐 What's inside?
+## Content
 
-Here are the top-level files and directories you'll see in a site created using the blog theme starter:
+Each of the sections in the site are placed in `src/sections`. Data is usually separated out into objects/arrays to be rendered in the component.
 
-```text
-gatsby-starter-blog-theme
-├── content
-│   ├── assets
-│   │   └── avatar.png
-│   └── posts
-│       ├── hello-world.mdx
-│       └── my-second-post.mdx
-├── src
-│   └── gatsby-theme-blog
-│       ├── components
-│       │   └── bio-content.js
-│       └── gatsby-theme-ui
-│           └── colors.js
-├── .gitignore
-├── .prettierrc
-├── gatsby-config.js
-├── LICENSE
-├── package-lock.json
-├── package.json
-└── README.md
-```
+## SEO
 
-1.  **`/content`**: A content folder holding assets that the theme expects to exist. This will vary from theme to theme -- this starter is set up to get you started with the blog theme, which expects an image asset for your avatar, and blog post content. Replace the avatar image file, delete the demo posts, and add your own!
+The component `src/components/common/SEO.js` handles all meta data and SEO content, modify the `SEO_DATA` variable to add the data automatically. For application manifest data and favicon, modify the `gatsby-plugin-manifest` configuration in `gatsby-config.js`.
 
-2.  **`/src`**: You will probably want to customize your site to personalize it. The files under `/src/gatsby-theme-blog` _shadow_, or override, the files of the same name in the `gatsby-theme-blog` package. To learn more about this, check out the [guide to getting started with using the blog theme starter](https://gatsbyjs.org/docs/themes/using-a-gatsby-theme).
+## Styling
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This file tells [Prettier](https://prettier.io/) which configuration it should use to lint files.
-
-5.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. When using themes, it's where you'll include the theme plugin, and any customization options the theme provides.
-
-6.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-7.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-8.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-9.  **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/).
-
-Here are some places to start:
-
-### Themes
-
-- To learn more about Gatsby themes specifically, we recommend checking out the [theme docs](https://www.gatsbyjs.org/docs/themes/).
-
-### General
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Reference Guides_ and _Gatsby API_ sections in the sidebar.
+This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
