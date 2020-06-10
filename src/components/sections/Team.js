@@ -50,12 +50,6 @@ const Team = () => (
               )
             })}
           </TeamGrid>
-          <Art>
-            <Img fluid={data.art_team.childImageSharp.fluid} />
-          </Art>
-          <ArtMobile>
-            <Img fluid={data.art_team.childImageSharp.fluid} />
-          </ArtMobile>
         </Container>
       </Section>
     )}
