@@ -1,31 +1,12 @@
-import React from "react"
-import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react';
+import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-// import * as typeformEmbed from "@typeform/embed"
-
-import { ReactTypeformEmbed } from "react-typeform-embed"
-
-import { Container } from "@components/global"
-import ExternalLink from "@common/ExternalLink"
-
-// const typeform = typeformEmbed.makePopup(
-//   "https://rrszynka.typeform.com/to/wnNC43", // NOTE: Replace with your typeform URL
-//   {
-//     mode: "drawer_right",
-//     autoClose: 3000,
-//     hideHeaders: true,
-//     hideFooters: true,
-//     onSubmit: function() {
-//       console.log("Typeform successfully submitted")
-//       this.close()
-//     }
-//   }
-// )
+import { Container } from '@components/global';
+import ExternalLink from '@common/ExternalLink';
 
 const Header = () => (
-  // const myScr = require("../../scripts/embedTypeform.js");
   <StaticQuery
     query={graphql`
       query {
@@ -49,20 +30,26 @@ const Header = () => (
               <Img fluid={data.art_build.childImageSharp.fluid} />
             </Art>
             <Text>
-              <h1>Wir laden dich ein</h1>
+              <h1>
+                Fast in
+                <br />
+                every way
+                <br />
+                that matters
+              </h1>
               <br />
-
-              <ReactTypeformEmbed
-                popup
-                url="https://rrszynka.typeform.com/to/wnNC43"
-              />
+              <p>
+                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
+                  Check out source &nbsp;&#x2794;
+                </StyledExternalLink>
+              </p>
             </Text>
           </Grid>
         </Container>
       </HeaderWrapper>
     )}
   />
-)
+);
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.primary};
@@ -71,7 +58,7 @@ const HeaderWrapper = styled.header`
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
   }
-`
+`;
 
 const Art = styled.figure`
   width: 100%;
@@ -85,7 +72,7 @@ const Art = styled.figure`
       width: 100%;
     }
   }
-`
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -101,7 +88,7 @@ const Grid = styled.div`
       order: 2;
     }
   }
-`
+`;
 
 const Text = styled.div`
   justify-self: center;
@@ -109,7 +96,7 @@ const Text = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
   }
-`
+`;
 
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
@@ -118,6 +105,6 @@ const StyledExternalLink = styled(ExternalLink)`
   &:hover {
     color: ${props => props.theme.color.black.regular};
   }
-`
+`;
 
-export default Header
+export default Header;
