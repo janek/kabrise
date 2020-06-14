@@ -6,6 +6,7 @@
   "author": "Ajay NS <ajay.ns@outlook.com>",
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
+    "@typeform/embed": "^0.20.0",
     "gatsby": "^2.0.76",
     "gatsby-cli": "^2.12.45",
     "gatsby-image": "^2.0.20",
