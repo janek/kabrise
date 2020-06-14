@@ -3,26 +3,29 @@ import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import * as typeformEmbed from "@typeform/embed"
+// import * as typeformEmbed from "@typeform/embed"
+
+import { ReactTypeformEmbed } from "react-typeform-embed"
 
 import { Container } from "@components/global"
 import ExternalLink from "@common/ExternalLink"
 
-const typeform = typeformEmbed.makePopup(
-  "https://rrszynka.typeform.com/to/wnNC43", // NOTE: Replace with your typeform URL
-  {
-    mode: "drawer_right",
-    autoClose: 3000,
-    hideHeaders: true,
-    hideFooters: true,
-    onSubmit: function() {
-      console.log("Typeform successfully submitted")
-      this.close()
-    }
-  }
-)
+// const typeform = typeformEmbed.makePopup(
+//   "https://rrszynka.typeform.com/to/wnNC43", // NOTE: Replace with your typeform URL
+//   {
+//     mode: "drawer_right",
+//     autoClose: 3000,
+//     hideHeaders: true,
+//     hideFooters: true,
+//     onSubmit: function() {
+//       console.log("Typeform successfully submitted")
+//       this.close()
+//     }
+//   }
+// )
 
 const Header = () => (
+  // const myScr = require("../../scripts/embedTypeform.js");
   <StaticQuery
     query={graphql`
       query {
@@ -48,11 +51,11 @@ const Header = () => (
             <Text>
               <h1>Wir laden dich ein</h1>
               <br />
-              <p>
-                <button onClick={() => typeform.open()}>
-                  Bewerbe sich als Künstler &nbsp;&#x2794;
-                </button>
-              </p>
+
+              <ReactTypeformEmbed
+                popup
+                url="https://rrszynka.typeform.com/to/wnNC43"
+              />
             </Text>
           </Grid>
         </Container>
