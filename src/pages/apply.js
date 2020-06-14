@@ -40,3 +40,8 @@ const FormFrame = styled.iframe`
 	top: 0;
 	border: 0;
 `
+
+// styles for wrapper
+// margin: 0;
+// height: 100%;
+// overflow: hidden;
