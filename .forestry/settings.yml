@@ -6,6 +6,11 @@ webhook_url:
 sections:
 - type: heading
   label: Some stuff don't know what
+- type: document
+  path: content/testdoc.md
+  label: Test of a Document Section
+  match: "**/*"
+  read_only: false
 - type: directory
   path: ''
   label: Dir Test
