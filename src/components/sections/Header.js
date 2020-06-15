@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react"
+import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
+import { Container } from "@components/global"
+import ExternalLink from "@common/ExternalLink"
 
 const Header = () => (
   <StaticQuery
@@ -39,7 +39,7 @@ const Header = () => (
               </h1>
               <br />
               <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
+                <StyledExternalLink href="/apply/">
                   Check out source &nbsp;&#x2794;
                 </StyledExternalLink>
               </p>
@@ -49,7 +49,7 @@ const Header = () => (
       </HeaderWrapper>
     )}
   />
-);
+)
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.color.primary};
@@ -58,7 +58,7 @@ const HeaderWrapper = styled.header`
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
   }
-`;
+`
 
 const Art = styled.figure`
   width: 100%;
@@ -72,7 +72,7 @@ const Art = styled.figure`
       width: 100%;
     }
   }
-`;
+`
 
 const Grid = styled.div`
   display: grid;
@@ -88,7 +88,7 @@ const Grid = styled.div`
       order: 2;
     }
   }
-`;
+`
 
 const Text = styled.div`
   justify-self: center;
@@ -96,7 +96,7 @@ const Text = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
   }
-`;
+`
 
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
@@ -105,6 +105,6 @@ const StyledExternalLink = styled(ExternalLink)`
   &:hover {
     color: ${props => props.theme.color.black.regular};
   }
-`;
+`
 
-export default Header;
+export default Header
