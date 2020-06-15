@@ -32,8 +32,15 @@ const Team = () => (
 )
 
 const LogoContainer = styled.div`
-	width: 100px;
-	height: 100px;
+	width: 100%;
+	height: 100%;
+	max-width: 100px;
+	max-height: 100px;
+
+	@media (max-width: ${props => props.theme.screen.sm}) {
+		max-width: 60px;
+		max-height: 60px;
+	}
 `
 
 const TeamGrid = styled.div`
