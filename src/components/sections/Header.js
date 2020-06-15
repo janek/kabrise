@@ -31,16 +31,14 @@ const Header = () => (
             </Art>
             <Text>
               <h1>
-                Fast in
+                Open call for artists
                 <br />
-                every way
-                <br />
-                that matters
+                15.06 - 15.07
               </h1>
               <br />
               <p>
                 <StyledExternalLink href="/apply/">
-                  Check out source &nbsp;&#x2794;
+                  Apply now &nbsp;&#x2794;
                 </StyledExternalLink>
               </p>
             </Text>
