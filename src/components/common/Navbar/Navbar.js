@@ -1,9 +1,11 @@
 import React, { Component } from "react"
+import styled from "styled-components"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
 
 import { Container } from "@components/global"
 import Logo from "@common/Logo"
+import ExternalLink from "@common/ExternalLink"
 
 import {
   Nav,
@@ -16,6 +18,25 @@ import {
 } from "./style"
 
 import { ReactComponent as MenuIcon } from "@static/icons/menu.svg"
+
+import GithubIcon from "@static/icons/github.svg"
+import InstagramIcon from "@static/icons/instagram.svg"
+import TwitterIcon from "@static/icons/twitter.svg"
+
+const SOCIAL = [
+  {
+    icon: GithubIcon,
+    link: "https://github.com/ajayns/gatsby-absurd"
+  },
+  {
+    icon: InstagramIcon,
+    link: "https://instagram.com/ajay_ns"
+  },
+  {
+    icon: TwitterIcon,
+    link: "https://twitter.com/ajayns08"
+  }
+]
 
 const NAV_ITEMS = ["About us", "Content", "Stage"]
 
@@ -42,6 +63,13 @@ class Navbar extends Component {
 
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
+      <SocialIcons>
+        {SOCIAL.map(({ icon, link }) => (
+          <ExternalLink key={link} href={link}>
+            <img src={icon} alt="link" />
+          </ExternalLink>
+        ))}
+      </SocialIcons>
       <Scrollspy
         items={NAV_ITEMS.map(item => item.toLowerCase())}
         currentClassName="active"
@@ -81,5 +109,19 @@ class Navbar extends Component {
     )
   }
 }
+
+const SocialIcons = styled.div`
+  display: inline-block;
+
+  img {
+    margin: 0 8px;
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    margin-top: 40px;
+  }
+`
 
 export default Navbar
