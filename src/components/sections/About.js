@@ -48,15 +48,18 @@ const About = () => (
         <Container>
           <Grid>
             <div>
-              <h2>About us</h2>
+              <h2>Wer wir sind</h2>
               <p>
-                Wie schaffen wir eine Zukunft, auf die wir uns freuen können?
-                Wie können wir alle nachhaltig, individuell, gemeinsam & in
-                unseren Nischen leben. Wir laden Expert*innen in die
-                stillgelegten Lungenheilanstalt am Grabowsee ein, um mit uns
-                über diese Fragen zu sprechen. Dabei dokumentieren wir auch
-                unsere kreative Symbiose mit dem Ort, an dem wir kreieren und
-                leben.
+                Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
+                Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
+                gemeinsam mit ökologischer und sozialer Nachhaltigkeit
+                auseinanderzusetzen. Wir kreieren einen Raum des Lernens in dem
+                wir Ideen und Vorbilder einladen, um gemeinsam eine bessere Welt
+                zu denken, zum Handeln aufzurufen und Verantwortung für die
+                Zukunft zu übernehmen. Gewaltfreie, direkte und achtsame
+                Kommunikation gehören zu unseren Grundprinzipien und wir freuen
+                uns über Feedback, denn nur so können wir lernen und uns
+                langfristig entwickeln.
               </p>
             </div>
             <Art>

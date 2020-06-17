@@ -9,32 +9,7 @@ const Content = () => (
   <StaticQuery
     query={graphql`
       query {
-        three_people_walking: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "three_people_walking" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
-        ) {
+        stage: file(sourceInstanceName: { eq: "art" }, name: { eq: "stage" }) {
           childImageSharp {
             fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -46,19 +21,21 @@ const Content = () => (
     render={data => (
       <Section id="content">
         <Container>
-          <Grid inverse>
+          <Grid>
             <Art>
-              <Img fluid={data.three_people_walking.childImageSharp.fluid} />
+              <Img fluid={data.stage.childImageSharp.fluid} />
             </Art>
             <div>
-              <h2>Content</h2>
+              <h2>Was wir machen</h2>
               <p>
-                Dieses Jahr liegt unser Schwerpunkt auf klimagerechte
-                Clubkultur, Theater und Kunstprojekte. Außerdem stellen wir
-                konkrete Lösungsansätze und Initiativen vor, die mit den
-                gewonnenen Erkenntnissen bereits erfolgreich arbeiten. All das
-                wird in kurze & knackige Videos verpackt, die möglichst viele
-                Menschen inspirieren sollen.
+                In der ersten Projektphase im Juni und Juli 2020 leben wir in
+                der alten Lungenheilanstalt am Grabowsee. Die Heilstätte bietet
+                etwas, das in vielen Städten verloren gegangen ist: Freiraum.
+                Jeder der über tausend Räume, sowie deren Umgebung kann eine
+                Bühne für Kunst und Kultur sein. Diese nutzen wir gemeinsam mit
+                eingeladenen Personen sowohl für diversen kreativen Output als
+                auch für die Auseinandersetzung mit der Thematik
+                Klimagerechtigkeit.
               </p>
             </div>
           </Grid>
@@ -109,7 +86,7 @@ const Grid = styled.div`
 
 const Art = styled.figure`
   margin: 0;
-  max-width: 380px;
+  max-width: 780px;
   width: 100%;
 `
 

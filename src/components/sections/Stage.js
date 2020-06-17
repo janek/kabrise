@@ -48,13 +48,15 @@ const Content = () => (
         <Container>
           <Grid inverse>
             <div>
-              <h2>Stage</h2>
+              <h2>Wo der fokus liegt</h2>
               <p>
-                Die Heilstätten bieten etwas das in vielen Städten verloren
-                gegangen ist: Platz. Dieses Luxusgut wollen wir anderen Menschen
-                zur Verfügung stellen um ihre Musik, Gedichte oder
-                Installationen vorzustellen. Jeder der über tausend Räume kann
-                eine Bühne für Kunst und Kultur sein.
+                Für diese erste Projektphase liegt unser Schwerpunkt auf
+                Klimagerechtigkeit im Zusammenhang mit Clubkultur, sowie der
+                Theater- und Kunstszene. In unserem Hauptformat “Heilstätte
+                Zukunft” laden wir Expert*innen für einen gemeinsamen Diskurs
+                ein. Filmisch inszeniert stellen wir konkrete Lösungsansätze und
+                Projekte vor, die mit den gewonnenen Erkenntnissen bereits
+                erfolgreich arbeiten.
               </p>
             </div>
             <Art>
