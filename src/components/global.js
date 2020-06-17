@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -27,7 +27,7 @@ export const Container = styled.div`
     `
     max-width: 1200px !important;
   `};
-`;
+`
 
 export const Section = styled.section`
   padding: 128px 0;
@@ -40,8 +40,8 @@ export const Section = styled.section`
   ${props =>
     props.accent &&
     `background-color: ${
-      props.accent === 'secondary'
+      props.accent === "secondary"
         ? props.theme.color.white.dark
         : props.theme.color.primary
     }`};
-`;
+`
