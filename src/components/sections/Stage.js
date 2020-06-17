@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
 
-const About = () => (
+const Content = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -44,19 +44,17 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
+      <Section id="content">
         <Container>
-          <Grid>
+          <Grid inverse>
             <div>
-              <h2>About us</h2>
+              <h2>Stage</h2>
               <p>
-                Wie schaffen wir eine Zukunft, auf die wir uns freuen können?
-                Wie können wir alle nachhaltig, individuell, gemeinsam & in
-                unseren Nischen leben. Wir laden Expert*innen in die
-                stillgelegten Lungenheilanstalt am Grabowsee ein, um mit uns
-                über diese Fragen zu sprechen. Dabei dokumentieren wir auch
-                unsere kreative Symbiose mit dem Ort, an dem wir kreieren und
-                leben.
+                Die Heilstätten bieten etwas das in vielen Städten verloren
+                gegangen ist: Platz. Dieses Luxusgut wollen wir anderen Menschen
+                zur Verfügung stellen um ihre Musik, Gedichte oder
+                Installationen vorzustellen. Jeder der über tausend Räume kann
+                eine Bühne für Kunst und Kultur sein.
               </p>
             </div>
             <Art>
@@ -114,4 +112,4 @@ const Art = styled.figure`
   width: 100%;
 `
 
-export default About
+export default Content

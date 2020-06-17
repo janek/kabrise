@@ -5,13 +5,13 @@ import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
 
-const About = () => (
+const Content = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        three_people_walking: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+          name: { eq: "three_people_walking" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -44,24 +44,23 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
+      <Section id="content">
         <Container>
-          <Grid>
+          <Grid inverse>
+            <Art>
+              <Img fluid={data.three_people_walking.childImageSharp.fluid} />
+            </Art>
             <div>
-              <h2>About us</h2>
+              <h2>Content</h2>
               <p>
-                Wie schaffen wir eine Zukunft, auf die wir uns freuen können?
-                Wie können wir alle nachhaltig, individuell, gemeinsam & in
-                unseren Nischen leben. Wir laden Expert*innen in die
-                stillgelegten Lungenheilanstalt am Grabowsee ein, um mit uns
-                über diese Fragen zu sprechen. Dabei dokumentieren wir auch
-                unsere kreative Symbiose mit dem Ort, an dem wir kreieren und
-                leben.
+                Dieses Jahr liegt unser Schwerpunkt auf klimagerechte
+                Clubkultur, Theater und Kunstprojekte. Außerdem stellen wir
+                konkrete Lösungsansätze und Initiativen vor, die mit den
+                gewonnenen Erkenntnissen bereits erfolgreich arbeiten. All das
+                wird in kurze & knackige Videos verpackt, die möglichst viele
+                Menschen inspirieren sollen.
               </p>
             </div>
-            <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
-            </Art>
           </Grid>
         </Container>
       </Section>
@@ -114,4 +113,4 @@ const Art = styled.figure`
   width: 100%;
 `
 
-export default About
+export default Content

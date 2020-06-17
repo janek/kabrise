@@ -38,7 +38,10 @@ const Header = () => (
               <br />
               <p>
                 <StyledExternalLink href="/apply/">
-                  Apply now &nbsp;&#x2794;
+                  Apply now (EN) &nbsp;&#x2794;
+                </StyledExternalLink>
+                <StyledExternalLink href="/apply/">
+                  Hier bewerben (DE) &nbsp;&#x2794;
                 </StyledExternalLink>
               </p>
             </Text>
@@ -99,8 +102,8 @@ const Text = styled.div`
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
   text-decoration: none;
-
-  &:hover {
+  display: block;
+  s &:hover {
     color: ${props => props.theme.color.black.regular};
   }
 `
