@@ -19,6 +19,7 @@ export const StyledContainer = styled(Container)`
 
 export const NavListWrapper = styled.div`
   display: flex;
+  flex-direction: ${props => (props.mobile ? "column" : "row")};
   ul {
     list-style: none;
     margin: 0;
