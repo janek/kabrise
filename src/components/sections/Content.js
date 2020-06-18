@@ -32,20 +32,17 @@ const Content = () => (
       <Section id="content">
         <Container>
           <Grid>
-            <Art>
-              <Img fluid={data.stage.childImageSharp.fluid} />
-            </Art>
+            <Art></Art>
             <div>
               <h2>Was wir machen</h2>
               <p>
                 In der ersten Projektphase im Juni und Juli 2020 leben wir in
-                der alten Lungenheilanstalt am Grabowsee. Die Heilstätte bietet
-                etwas, das in vielen Städten verloren gegangen ist: Freiraum.
-                Jeder der über tausend Räume, sowie deren Umgebung kann eine
-                Bühne für Kunst und Kultur sein. Diese nutzen wir gemeinsam mit
-                eingeladenen Personen sowohl für diversen kreativen Output als
-                auch für die Auseinandersetzung mit der Thematik
-                Klimagerechtigkeit.
+                der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
+                vielen Städten verloren gegangen ist: Freiraum. Jeder der über
+                tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
+                und Kultur sein. Diese nutzen wir gemeinsam mit eingeladenen
+                Personen sowohl für diversen kreativen Output als auch für die
+                Auseinandersetzung mit der Thematik Klimagerechtigkeit.
               </p>
             </div>
           </Grid>

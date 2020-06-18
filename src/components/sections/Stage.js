@@ -50,13 +50,12 @@ const Content = () => (
             <div>
               <h2>Wo der fokus liegt</h2>
               <p>
-                Für diese erste Projektphase liegt unser Schwerpunkt auf
-                Klimagerechtigkeit im Zusammenhang mit Clubkultur, sowie der
-                Theater- und Kunstszene. In unserem Hauptformat “Heilstätte
-                Zukunft” laden wir Expert*innen für einen gemeinsamen Diskurs
-                ein. Filmisch inszeniert stellen wir konkrete Lösungsansätze und
-                Projekte vor, die mit den gewonnenen Erkenntnissen bereits
-                erfolgreich arbeiten.
+                In unserem Format “Heilstätte Zukunft” laden wir Expert*innen
+                für einen gemeinsamen Diskurs ein. Filmisch inszeniert stellen
+                wir konkrete Lösungsansätze und Projekte vor, die mit den
+                gewonnenen Erkenntnissen bereits erfolgreich arbeiten. Zum Start
+                des Formates thematisieren wir den Zusammenhang zwischen
+                Klimawandel und Clubkultur, sowie der Theater- und Kunstszene.
               </p>
             </div>
             <Art>
