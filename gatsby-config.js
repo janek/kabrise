@@ -19,6 +19,10 @@ module.exports = {
       options: {
         name: `art`,
         path: `${__dirname}/src/images/art`
+      },
+      options: {
+        name: `pictures`,
+        path: `${__dirname}/src/images/pictures`
       }
     },
     `gatsby-transformer-sharp`,
