@@ -31,11 +31,11 @@ const SOCIAL = [
 
   {
     icon: YoutubeIcon,
-    link: ""
+    link: "/a"
   },
   {
     icon: FacebookIcon,
-    link: ""
+    link: "/b"
   }
 ]
 
