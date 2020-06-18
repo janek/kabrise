@@ -32,7 +32,9 @@ const Content = () => (
       <Section id="content">
         <Container>
           <Grid>
-            <Art></Art>
+            <Art>
+              <Img fluid={data.stage.childImageSharp.fluid} />
+            </Art>
             <div>
               <h2>Was wir machen</h2>
               <p>
