@@ -43,9 +43,11 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        fonts: [`average`, `prata\:400,700`]
+        google: {
+          families: ["Maitree", "Poly", "Open Sans"]
+        }
       }
     },
     {

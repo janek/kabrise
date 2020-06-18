@@ -16,6 +16,16 @@ const Content = () => (
             }
           }
         }
+        dancer_one: file(
+          sourceInstanceName: { eq: "art" }
+          name: { eq: "dancer_one" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 760) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
       }
     `}
     render={data => (

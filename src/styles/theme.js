@@ -1,10 +1,10 @@
 const theme = {
   font: {
-    primary: `'Prata', serif`,
-    secondary: `'Average', serif`
+    primary: `'Maitree', sans`,
+    secondary: `'Open Sans', serif`
   },
   font_size: {
-    small: "font-size: 20px; line-height: 30px",
+    small: "font-size: 16px; line-height: 20px",
     regular: "font-size: 24px; line-height: 32px",
     large: "font-size: 30px; line-height: 40px",
     larger: "font-size: 36px; line-height: 48px",
