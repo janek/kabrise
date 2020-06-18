@@ -28,12 +28,13 @@ const SOCIAL = [
     icon: InstagramIcon,
     link: "https://instagram.com/kabrise_"
   },
+
   {
-    icon: FacebookIcon,
+    icon: YoutubeIcon,
     link: ""
   },
   {
-    icon: YoutubeIcon,
+    icon: FacebookIcon,
     link: ""
   }
 ]
@@ -65,7 +66,7 @@ class Navbar extends Component {
     <NavListWrapper mobile={mobile}>
       <SocialIcons>
         {SOCIAL.map(({ icon, link }) => (
-          <ExternalLink key={link} href={link}>
+          <ExternalLink key={link} href={link} title={link}>
             <img src={icon} alt="link" />
           </ExternalLink>
         ))}
