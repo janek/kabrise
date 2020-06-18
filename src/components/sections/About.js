@@ -9,31 +9,9 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
+        blackboard: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+          name: { eq: "blackboard" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -63,7 +41,7 @@ const About = () => (
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
+              <Img fluid={data.blackboard.childImageSharp.fluid} />
             </Art>
           </Grid>
         </Container>
