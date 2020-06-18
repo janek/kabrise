@@ -19,22 +19,22 @@ import {
 
 import { ReactComponent as MenuIcon } from "@static/icons/menu.svg"
 
-import GithubIcon from "@static/icons/github.svg"
 import InstagramIcon from "@static/icons/instagram.svg"
-import TwitterIcon from "@static/icons/twitter.svg"
+import FacebookIcon from "@static/icons/facebook.svg"
+import YoutubeIcon from "@static/icons/youtube.svg"
 
 const SOCIAL = [
   {
-    icon: GithubIcon,
-    link: "https://github.com/ajayns/gatsby-absurd"
-  },
-  {
     icon: InstagramIcon,
-    link: "https://instagram.com/ajay_ns"
+    link: "https://instagram.com/kabrise_"
   },
   {
-    icon: TwitterIcon,
-    link: "https://twitter.com/ajayns08"
+    icon: FacebookIcon,
+    link: ""
+  },
+  {
+    icon: YoutubeIcon,
+    link: ""
   }
 ]
 
