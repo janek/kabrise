@@ -19,10 +19,20 @@ module.exports = {
       options: {
         name: `art`,
         path: `${__dirname}/src/images/art`
-      },
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `pictures`,
         path: `${__dirname}/src/images/pictures`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "fonts",
+        path: `${__dirname}/src/fonts`
       }
     },
     `gatsby-transformer-sharp`,
@@ -44,6 +54,10 @@ module.exports = {
       options: {
         google: {
           families: ["Maitree", "Poly", "Open Sans"]
+        },
+        custom: {
+          families: ["BasisGrotesque", "Recoleta"],
+          urls: ["/fonts/fonts.css"]
         }
       }
     },
