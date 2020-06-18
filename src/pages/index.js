@@ -7,7 +7,6 @@ import Header from "@sections/Header"
 import About from "@sections/About"
 import Content from "@sections/Content"
 import Stage from "@sections/Stage"
-import Brands from "@sections/Brands"
 
 import Footer from "@sections/Footer"
 
