@@ -38,10 +38,12 @@ const Header = () => (
               <br />
               <p>
                 <StyledExternalLink href="/apply-en/">
-                  Apply now (EN) &nbsp;&#x2794;
+                  Apply now (EN){" "}
+                  <span style={{ color: "#FBDE4E" }}>&nbsp;&#x2794;</span>
                 </StyledExternalLink>
                 <StyledExternalLink href="/apply-de/">
-                  Hier bewerben (DE) &nbsp;&#x2794;
+                  Hier bewerben (DE){" "}
+                  <span style={{ color: "#4260A4" }}>&nbsp;&#x2794;</span>
                 </StyledExternalLink>
               </p>
             </Text>
