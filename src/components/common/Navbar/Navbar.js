@@ -39,7 +39,7 @@ const SOCIAL = [
   }
 ]
 
-const NAV_ITEMS = ["About", "Project", "Focus"]
+const NAV_ITEMS = ["about", "project", "focus"]
 
 class Navbar extends Component {
   state = {
@@ -118,6 +118,12 @@ const SocialIcons = styled.div`
     margin: 0 8px;
     width: 32px;
     height: 32px;
+    ${({ mobile }) =>
+      mobile &&
+      `
+        width: 45px;
+        height: 45px;
+      `};
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {

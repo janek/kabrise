@@ -44,7 +44,7 @@ export const NavListWrapper = styled.div`
 export const NavItem = styled.li`
   margin: 0 0.75em;
   font-family: ${props => props.theme.font.menu};
-  ${props => props.theme.font_size.small};
+  ${props => props.theme.font_size.regular};
 
   a {
     text-decoration: none;
@@ -62,6 +62,10 @@ export const NavItem = styled.li`
 export const MobileMenu = styled.div`
   width: 100%;
   background: ${props => props.theme.color.primary};
+  text-align: center;
+  a {
+    font-size: 42px;
+  }
 `
 
 export const Brand = styled.div`

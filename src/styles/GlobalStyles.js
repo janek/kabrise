@@ -53,6 +53,7 @@ const GlobalStyles = createGlobalStyle`
   p {
     ${props => props.theme.font_size.small};
     color: ${props => props.theme.color.black.light};
+    text-align: justify;
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {

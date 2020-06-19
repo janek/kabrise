@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
+import YoutubeIcon from "@static/icons/youtube.svg"
 
 const About = () => (
   <StaticQuery
@@ -25,6 +26,9 @@ const About = () => (
       <Section id="about">
         <AboutWrapper>
           <Container>
+            <Circles>
+              <img src={YoutubeIcon} />
+            </Circles>
             <Grid>
               <div>
                 <h2>Wer wir sind</h2>
@@ -60,18 +64,11 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 40px;
-  text-align: right;
   align-items: center;
   justify-items: center;
   margin: 24px 0;
   padding-top: 50px;
   padding-bottom: 50px;
-
-  ${props =>
-    props.inverse &&
-    `
-    text-align: left;
-  `}
 
   h2 {
     margin-bottom: 16px;
@@ -103,6 +100,18 @@ const Art = styled.figure`
 
   .gatsby-image-wrapper {
     max-height: 285px;
+  }
+`
+
+const Circles = styled.figure`
+  max-height: 100px;
+  max-width: 100px;
+  margin-left: 40%;
+  margin-bottom: -10%;
+  
+  .img {
+    max-height: 285px;
+    margin 0 auto;
   }
 `
 
