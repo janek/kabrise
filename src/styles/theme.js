@@ -1,6 +1,6 @@
 const theme = {
   font: {
-    primary: `'Maitree', sans`,
+    primary: `'Recoleta', sans`,
     secondary: `'Open Sans', serif`
   },
   font_size: {
