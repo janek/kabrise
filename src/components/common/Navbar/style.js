@@ -43,7 +43,7 @@ export const NavListWrapper = styled.div`
 
 export const NavItem = styled.li`
   margin: 0 0.75em;
-  font-family: ${props => props.theme.font.secondary};
+  font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.small};
 
   a {
@@ -65,7 +65,7 @@ export const MobileMenu = styled.div`
 `
 
 export const Brand = styled.div`
-  font-family: ${props => props.theme.font.primary};
+  font-family: ${props => props.theme.font.headers};
   ${props => props.theme.font_size.large};
 `
 
