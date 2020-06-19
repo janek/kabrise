@@ -10,7 +10,7 @@ const Header = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_build: file(
+        dancer: file(
           sourceInstanceName: { eq: "art" }
           name: { eq: "dancer_one" }
         ) {
@@ -27,7 +27,7 @@ const Header = () => (
         <Container>
           <Grid>
             <Art>
-              <Img fluid={data.art_build.childImageSharp.fluid} />
+              <Img fluid={data.dancer.childImageSharp.fluid} />
             </Art>
             <Text>
               <h1>
@@ -53,7 +53,7 @@ const Header = () => (
 )
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.color.primary};
+  background-color: ${props => props.theme.color.white};
   padding-top: 96px;
 
   @media (max-width: ${props => props.theme.screen.md}) {
