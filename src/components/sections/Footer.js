@@ -20,6 +20,13 @@ const Footer = () => (
             }
           }
         }
+        stage: file(sourceInstanceName: { eq: "art" }, name: { eq: "stage" }) {
+          childImageSharp {
+            fluid(maxWidth: 760) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
       }
     `}
     render={data => (

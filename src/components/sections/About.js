@@ -19,6 +19,23 @@ const About = () => (
             }
           }
         }
+        stage: file(sourceInstanceName: { eq: "art" }, name: { eq: "stage" }) {
+          childImageSharp {
+            fluid(maxWidth: 760) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+        five_people_indoors: file(
+          sourceInstanceName: { eq: "art" }
+          name: { eq: "five_people_indoors" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 1440) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -44,6 +61,43 @@ const About = () => (
               <Img fluid={data.blackboard.childImageSharp.fluid} />
             </Art>
           </Grid>
+          <br />
+          <Grid inverse>
+            <Art>
+              <Img fluid={data.stage.childImageSharp.fluid} />
+            </Art>
+            <div>
+              <h2>Was wir machen</h2>
+              <p>
+                In der ersten Projektphase im Juni und Juli 2020 leben wir in
+                der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
+                vielen Städten verloren gegangen ist: Freiraum. Jeder der über
+                tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
+                und Kultur sein. Diese nutzen wir gemeinsam mit eingeladenen
+                Personen sowohl für diversen kreativen Output als auch für die
+                Auseinandersetzung mit der Thematik Klimagerechtigkeit.
+              </p>
+            </div>
+          </Grid>
+
+          <br />
+
+          <Grid>
+            <div>
+              <h2>Wo der Fokus liegt</h2>
+              <p>
+                In unserem Format “Heilstätte Zukunft” laden wir Expert*innen
+                für einen gemeinsamen Diskurs ein. Filmisch inszeniert stellen
+                wir konkrete Lösungsansätze und Projekte vor, die mit den
+                gewonnenen Erkenntnissen bereits erfolgreich arbeiten. Zum Start
+                des Formates thematisieren wir den Zusammenhang zwischen
+                Klimawandel und Clubkultur sowie der Theater- und Kunstszene.
+              </p>
+            </div>
+            <Art>
+              <Img fluid={data.five_people_indoors.childImageSharp.fluid} />
+            </Art>
+          </Grid>
         </Container>
       </Section>
     )}
@@ -63,7 +117,6 @@ const Grid = styled.div`
     props.inverse &&
     `
     text-align: left;
-    grid-template-columns: 2fr 3fr;
   `}
 
   h2 {
@@ -91,8 +144,12 @@ const Grid = styled.div`
 
 const Art = styled.figure`
   margin: 0;
-  max-width: 380px;
+  max-width: 760px;
   width: 100%;
+
+  .gatsby-image-wrapper {
+    max-height: 285px;
+  }
 `
 
 export default About
