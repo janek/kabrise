@@ -31,7 +31,7 @@ const About = () => (
           name: { eq: "five_people_indoors" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 1440) {
+            fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
@@ -62,7 +62,7 @@ const About = () => (
                 <Img fluid={data.blackboard.childImageSharp.fluid} />
               </Art>
             </Grid>
-            <br />
+
             <Grid inverse>
               <Art>
                 <Img fluid={data.stage.childImageSharp.fluid} />
@@ -80,8 +80,6 @@ const About = () => (
                 </p>
               </div>
             </Grid>
-
-            <br />
 
             <Grid>
               <div>
