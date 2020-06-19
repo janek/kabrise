@@ -36,18 +36,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Maitree", "Poly", "Open Sans"]
-        },
-        custom: {
-          families: ["BasisGrotesque", "Recoleta"],
-          urls: ["/fonts/fonts.css"]
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {

@@ -1,7 +1,8 @@
 const theme = {
   font: {
-    primary: `'Recoleta', sans`,
-    secondary: `'Open Sans', serif`
+    headers: `'Recoleta', serif`,
+    menu: `'Bo', sans`,
+    text: `'BoLight', sans`
   },
   font_size: {
     small: "font-size: 16px; line-height: 20px",
