@@ -40,69 +40,75 @@ const About = () => (
     `}
     render={data => (
       <Section id="about">
-        <Container>
-          <Grid>
-            <div>
-              <h2>Wer wir sind</h2>
-              <p>
-                Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
-                Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
-                gemeinsam mit ökologischer und sozialer Nachhaltigkeit
-                auseinanderzusetzen. Wir kreieren einen Raum des Lernens in dem
-                wir Ideen und Vorbilder einladen, um gemeinsam eine bessere Welt
-                zu denken, zum Handeln aufzurufen und Verantwortung für die
-                Zukunft zu übernehmen. Gewaltfreie, direkte und achtsame
-                Kommunikation gehören zu unseren Grundprinzipien und wir freuen
-                uns über Feedback, denn nur so können wir lernen und uns
-                langfristig entwickeln.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.blackboard.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <br />
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.stage.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Was wir machen</h2>
-              <p>
-                In der ersten Projektphase im Juni und Juli 2020 leben wir in
-                der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
-                vielen Städten verloren gegangen ist: Freiraum. Jeder der über
-                tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
-                und Kultur sein. Diese nutzen wir gemeinsam mit eingeladenen
-                Personen sowohl für diversen kreativen Output als auch für die
-                Auseinandersetzung mit der Thematik Klimagerechtigkeit.
-              </p>
-            </div>
-          </Grid>
+        <AboutWrapper>
+          <Container>
+            <Grid>
+              <div>
+                <h2>Wer wir sind</h2>
+                <p>
+                  Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
+                  Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
+                  gemeinsam mit ökologischer und sozialer Nachhaltigkeit
+                  auseinanderzusetzen. Wir kreieren einen Raum des Lernens in
+                  dem wir Ideen und Vorbilder einladen, um gemeinsam eine
+                  bessere Welt zu denken, zum Handeln aufzurufen und
+                  Verantwortung für die Zukunft zu übernehmen. Gewaltfreie,
+                  direkte und achtsame Kommunikation gehören zu unseren
+                  Grundprinzipien und wir freuen uns über Feedback, denn nur so
+                  können wir lernen und uns langfristig entwickeln.
+                </p>
+              </div>
+              <Art>
+                <Img fluid={data.blackboard.childImageSharp.fluid} />
+              </Art>
+            </Grid>
+            <br />
+            <Grid inverse>
+              <Art>
+                <Img fluid={data.stage.childImageSharp.fluid} />
+              </Art>
+              <div>
+                <h2>Was wir machen</h2>
+                <p>
+                  In der ersten Projektphase im Juni und Juli 2020 leben wir in
+                  der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
+                  vielen Städten verloren gegangen ist: Freiraum. Jeder der über
+                  tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
+                  und Kultur sein. Diese nutzen wir gemeinsam mit eingeladenen
+                  Personen sowohl für diversen kreativen Output als auch für die
+                  Auseinandersetzung mit der Thematik Klimagerechtigkeit.
+                </p>
+              </div>
+            </Grid>
 
-          <br />
+            <br />
 
-          <Grid>
-            <div>
-              <h2>Wo der Fokus liegt</h2>
-              <p>
-                In unserem Format “Heilstätte Zukunft” laden wir Expert*innen
-                für einen gemeinsamen Diskurs ein. Filmisch inszeniert stellen
-                wir konkrete Lösungsansätze und Projekte vor, die mit den
-                gewonnenen Erkenntnissen bereits erfolgreich arbeiten. Zum Start
-                des Formates thematisieren wir den Zusammenhang zwischen
-                Klimawandel und Clubkultur sowie der Theater- und Kunstszene.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.five_people_indoors.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-        </Container>
+            <Grid>
+              <div>
+                <h2>Wo der Fokus liegt</h2>
+                <p>
+                  In unserem Format “Heilstätte Zukunft” laden wir Expert*innen
+                  für einen gemeinsamen Diskurs ein. Filmisch inszeniert stellen
+                  wir konkrete Lösungsansätze und Projekte vor, die mit den
+                  gewonnenen Erkenntnissen bereits erfolgreich arbeiten. Zum
+                  Start des Formates thematisieren wir den Zusammenhang zwischen
+                  Klimawandel und Clubkultur sowie der Theater- und Kunstszene.
+                </p>
+              </div>
+              <Art>
+                <Img fluid={data.five_people_indoors.childImageSharp.fluid} />
+              </Art>
+            </Grid>
+          </Container>
+        </AboutWrapper>
       </Section>
     )}
   />
 )
+
+const AboutWrapper = styled.div`
+  background-color: ${props => props.theme.color.primary};
+`
 
 const Grid = styled.div`
   display: grid;
@@ -112,6 +118,8 @@ const Grid = styled.div`
   align-items: center;
   justify-items: center;
   margin: 24px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   ${props =>
     props.inverse &&
