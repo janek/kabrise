@@ -116,8 +116,8 @@ const SocialIcons = styled.div`
 
   img {
     margin: 0 8px;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {
