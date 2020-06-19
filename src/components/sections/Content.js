@@ -35,7 +35,7 @@ const Content = () => (
             <Art>
               <Img fluid={data.stage.childImageSharp.fluid} />
             </Art>
-            <div>
+            <DivLeftAlign>
               <h2>Was wir machen</h2>
               <p>
                 In der ersten Projektphase im Juni und Juli 2020 leben wir in
@@ -46,13 +46,17 @@ const Content = () => (
                 Personen sowohl für diversen kreativen Output als auch für die
                 Auseinandersetzung mit der Thematik Klimagerechtigkeit.
               </p>
-            </div>
+            </DivLeftAlign>
           </Grid>
         </Container>
       </Section>
     )}
   />
 )
+
+const DivLeftAlign = styled.div`
+  text-align: left;
+`
 
 const Grid = styled.div`
   display: grid;
