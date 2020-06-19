@@ -5,8 +5,6 @@ import Navbar from "@common/Navbar"
 
 import Header from "@sections/Header"
 import About from "@sections/About"
-import Content from "@sections/Content"
-import Stage from "@sections/Stage"
 
 import Footer from "@sections/Footer"
 

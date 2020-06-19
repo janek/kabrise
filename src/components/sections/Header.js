@@ -37,10 +37,10 @@ const Header = () => (
               </h1>
               <br />
               <p>
-                <StyledExternalLink href="/apply/">
+                <StyledExternalLink href="/apply-en/">
                   Apply now (EN) &nbsp;&#x2794;
                 </StyledExternalLink>
-                <StyledExternalLink href="/apply/">
+                <StyledExternalLink href="/apply-de/">
                   Hier bewerben (DE) &nbsp;&#x2794;
                 </StyledExternalLink>
               </p>

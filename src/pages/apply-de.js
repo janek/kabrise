@@ -20,7 +20,7 @@ const FormPage = () => (
 				height="100%"
 				frameborder="0"
 				allow="camera; microphone; autoplay; encrypted-media;"
-				src="https://form.typeform.com/to/wnNC43"
+				src="https://kabrisekollektiv.typeform.com/to/oe7fqk0l"
 			></FormFrame>
 			<script
 				type="text/javascript"
