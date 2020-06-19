@@ -53,6 +53,7 @@ const Header = () => (
 )
 
 const HeaderWrapper = styled.header`
+  margin-bottom: -160px;
   background-color: ${props => props.theme.color.white};
   padding-top: 96px;
 
@@ -62,8 +63,12 @@ const HeaderWrapper = styled.header`
 `
 
 const Art = styled.figure`
-  width: 100%;
+  width: 60%;
   margin: 0;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 100%;
+  }
 
   > div {
     width: 120%;
