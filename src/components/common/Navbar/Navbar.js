@@ -39,7 +39,7 @@ const SOCIAL = [
   }
 ]
 
-const NAV_ITEMS = ["About us", "Content", "Stage"]
+const NAV_ITEMS = ["About", "Project", "Focus"]
 
 class Navbar extends Component {
   state = {

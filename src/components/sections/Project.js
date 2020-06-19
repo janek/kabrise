@@ -5,14 +5,11 @@ import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
 
-const About = () => (
+const Project = () => (
   <StaticQuery
     query={graphql`
       query {
-        blackboard: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "blackboard" }
-        ) {
+        stage: file(sourceInstanceName: { eq: "art" }, name: { eq: "stage" }) {
           childImageSharp {
             fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -22,28 +19,25 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
+      <Section id="project">
         <AboutWrapper>
           <Container>
-            <Grid>
+            <Grid inverse>
+              <Art>
+                <Img fluid={data.stage.childImageSharp.fluid} />
+              </Art>
               <div>
-                <h2>Wer wir sind</h2>
+                <h2>Was wir machen</h2>
                 <p>
-                  Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
-                  Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
-                  gemeinsam mit ökologischer und sozialer Nachhaltigkeit
-                  auseinanderzusetzen. Wir kreieren einen Raum des Lernens in
-                  dem wir Ideen und Vorbilder einladen, um gemeinsam eine
-                  bessere Welt zu denken, zum Handeln aufzurufen und
-                  Verantwortung für die Zukunft zu übernehmen. Gewaltfreie,
-                  direkte und achtsame Kommunikation gehören zu unseren
-                  Grundprinzipien und wir freuen uns über Feedback, denn nur so
-                  können wir lernen und uns langfristig entwickeln.
+                  In der ersten Projektphase im Juni und Juli 2020 leben wir in
+                  der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
+                  vielen Städten verloren gegangen ist: Freiraum. Jeder der über
+                  tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
+                  und Kultur sein. Diese nutzen wir gemeinsam mit eingeladenen
+                  Personen sowohl für diversen kreativen Output als auch für die
+                  Auseinandersetzung mit der Thematik Klimagerechtigkeit.
                 </p>
               </div>
-              <Art>
-                <Img fluid={data.blackboard.childImageSharp.fluid} />
-              </Art>
             </Grid>
           </Container>
         </AboutWrapper>
@@ -106,4 +100,4 @@ const Art = styled.figure`
   }
 `
 
-export default About
+export default Project

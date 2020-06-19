@@ -5,13 +5,13 @@ import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
 
-const About = () => (
+const Focus = () => (
   <StaticQuery
     query={graphql`
       query {
-        blackboard: file(
+        five_people_indoors: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "blackboard" }
+          name: { eq: "five_people_indoors" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -22,27 +22,23 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
+      <Section id="focus">
         <AboutWrapper>
           <Container>
             <Grid>
               <div>
-                <h2>Wer wir sind</h2>
+                <h2>Wo der Fokus liegt</h2>
                 <p>
-                  Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
-                  Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
-                  gemeinsam mit ökologischer und sozialer Nachhaltigkeit
-                  auseinanderzusetzen. Wir kreieren einen Raum des Lernens in
-                  dem wir Ideen und Vorbilder einladen, um gemeinsam eine
-                  bessere Welt zu denken, zum Handeln aufzurufen und
-                  Verantwortung für die Zukunft zu übernehmen. Gewaltfreie,
-                  direkte und achtsame Kommunikation gehören zu unseren
-                  Grundprinzipien und wir freuen uns über Feedback, denn nur so
-                  können wir lernen und uns langfristig entwickeln.
+                  In unserem Format “Heilstätte Zukunft” laden wir Expert*innen
+                  für einen gemeinsamen Diskurs ein. Filmisch inszeniert stellen
+                  wir konkrete Lösungsansätze und Projekte vor, die mit den
+                  gewonnenen Erkenntnissen bereits erfolgreich arbeiten. Zum
+                  Start des Formates thematisieren wir den Zusammenhang zwischen
+                  Klimawandel und Clubkultur sowie der Theater- und Kunstszene.
                 </p>
               </div>
               <Art>
-                <Img fluid={data.blackboard.childImageSharp.fluid} />
+                <Img fluid={data.five_people_indoors.childImageSharp.fluid} />
               </Art>
             </Grid>
           </Container>
@@ -106,4 +102,4 @@ const Art = styled.figure`
   }
 `
 
-export default About
+export default Focus
