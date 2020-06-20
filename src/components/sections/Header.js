@@ -36,16 +36,18 @@ const Header = () => (
                 15.06 - 15.07
               </h1>
               <br />
-              <p>
+              <ApplicationLinksWrapper>
                 <StyledExternalLink href="/apply-en/">
                   Apply now (EN){" "}
                   <span style={{ color: "#FBDE4E" }}>&nbsp;&#x2794;</span>
                 </StyledExternalLink>
+              </ApplicationLinksWrapper>
+              <ApplicationLinksWrapperYellow>
                 <StyledExternalLink href="/apply-de/">
                   Hier bewerben (DE){" "}
                   <span style={{ color: "#4260A4" }}>&nbsp;&#x2794;</span>
                 </StyledExternalLink>
-              </p>
+              </ApplicationLinksWrapperYellow>
             </Text>
           </Grid>
         </Container>
@@ -53,6 +55,32 @@ const Header = () => (
     )}
   />
 )
+
+const ApplicationLinksWrapper = styled.div`
+  border-radius: 10px;
+  -webkit-border-radius: 10px 10px;
+  padding: 10px 10px;
+  width: 200px;
+  margin-bottom: 10px;
+
+  :hover {
+    background-color: #3d5ea9;
+    color: white;
+  }
+`
+
+const ApplicationLinksWrapperYellow = styled.div`
+  border-radius: 10px;
+  -webkit-border-radius: 10px 10px;
+  padding: 10px 10px;
+  width: 200px;
+  margin-bottom: 10px;
+
+  :hover {
+    background-color: #ffdf10;
+    color: black;
+  }
+`
 
 const HeaderWrapper = styled.header`
   margin-bottom: -160px;

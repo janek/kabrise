@@ -22,8 +22,8 @@ const theme = {
       regular: "#211E26"
     },
     red: "#D3553B",
-    blue: "#4260A4",
-    yellow: "#FBDE4E",
+    blue: "#3D5EA9",
+    yellow: "#FFDF10",
     primary: "#FFFFFF"
   },
   screen: {
