@@ -31,11 +31,11 @@ const SOCIAL = [
 
   {
     icon: YoutubeIcon,
-    link: "/a"
+    link: "https://www.youtube.com/channel/UCue1EZ2sBVBZKEChwmLu2mg"
   },
   {
     icon: FacebookIcon,
-    link: "/b"
+    link: "https://www.facebook.com/kabrisekollektiv"
   }
 ]
 
