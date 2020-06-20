@@ -116,18 +116,24 @@ const SocialIcons = styled.div`
 
   img {
     margin: 0 8px;
-    width: 32px;
-    height: 32px;
+    width: 60px;
+    height: 60px;
+    margin-left: -8px;
+    margin-right: -8px;
     ${({ mobile }) =>
       mobile &&
       `
-        width: 45px;
-        height: 45px;
+        width: 60px;
+        height: 60px;
       `};
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {
     margin-top: 40px;
+  }
+
+  @media (min-width: ${props => props.theme.screen.lg}) {
+    margin-right: 40px;
   }
 `
 
