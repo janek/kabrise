@@ -36,8 +36,8 @@ const About = () => (
                   Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
                   Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
                   gemeinsam mit ökologischer und sozialer Nachhaltigkeit
-                  auseinanderzusetzen. Wir kreieren einen Raum des Lernens in
-                  dem wir Ideen und Vorbilder einladen, um gemeinsam eine
+                  auseinanderzusetzen. Wir kreieren einen Raum des Lernens, in
+                  den wir Ideen und Vorbilder einladen, um gemeinsam eine
                   bessere Welt zu denken, zum Handeln aufzurufen und
                   Verantwortung für die Zukunft zu übernehmen. Gewaltfreie,
                   direkte und achtsame Kommunikation gehören zu unseren

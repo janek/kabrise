@@ -37,7 +37,7 @@ const Footer = () => (
                 Follow
                 {` `}
                 <ExternalLink href="https://instagram.com/kabrise_">
-                  @kabrise_ on Instagram
+                  <b>@kabrise_</b> on Instagram
                 </ExternalLink>
               </span>
             </Copyright>
