@@ -10,9 +10,9 @@ const Focus = () => (
   <StaticQuery
     query={graphql`
       query {
-        five_people_indoors: file(
+        work_group: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "five_people_indoors" }
+          name: { eq: "work_group" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -42,7 +42,7 @@ const Focus = () => (
                 </p>
               </div>
               <Art>
-                <Img fluid={data.five_people_indoors.childImageSharp.fluid} />
+                <Img fluid={data.work_group.childImageSharp.fluid} />
               </Art>
             </Grid>
           </Container>
@@ -105,9 +105,13 @@ const Art = styled.figure`
   margin: 0;
   max-width: 760px;
   width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px 10px;
 
   .gatsby-image-wrapper {
     max-height: 285px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px 10px;
   }
 `
 

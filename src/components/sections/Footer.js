@@ -10,19 +10,12 @@ const Footer = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_pot: file(
+        dancer_two: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "customers_pot" }
+          name: { eq: "dancer_two" }
         ) {
           childImageSharp {
             fluid(maxWidth: 960) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-        stage: file(sourceInstanceName: { eq: "art" }, name: { eq: "stage" }) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
@@ -33,19 +26,18 @@ const Footer = () => (
       <React.Fragment>
         <Art>
           <Img
-            fluid={data.art_pot.childImageSharp.fluid}
+            fluid={data.dancer_two.childImageSharp.fluid}
             style={{ width: 480, maxWidth: "100%", marginBottom: -16 }}
           />
         </Art>
         <FooterWrapper>
           <StyledContainer>
             <Copyright>
-              <h2>Absurd</h2>
               <span>
-                Illustrations by
+                Follow
                 {` `}
-                <ExternalLink href="https://twitter.com/diana_valeanu">
-                  @diana_valeanu
+                <ExternalLink href="https://instagram.com/kabrise_">
+                  @kabrise_ on Instagram
                 </ExternalLink>
               </span>
             </Copyright>

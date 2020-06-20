@@ -92,7 +92,6 @@ const Circles = styled.figure`
   max-width: 100px;
   margin-left: 70%;
   margin-bottom: -5%;
-  
   .img {
     max-height: 285px;
     margin 0 auto;
@@ -103,9 +102,13 @@ const Art = styled.figure`
   margin: 0;
   max-width: 760px;
   width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px 10px;
 
   .gatsby-image-wrapper {
     max-height: 285px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px 10px;
   }
 `
 

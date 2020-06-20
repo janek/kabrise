@@ -10,9 +10,9 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        blackboard: file(
+        group_photo: file(
           sourceInstanceName: { eq: "art" }
-          name: { eq: "blackboard" }
+          name: { eq: "group_photo" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -46,7 +46,7 @@ const About = () => (
                 </p>
               </div>
               <Art>
-                <Img fluid={data.blackboard.childImageSharp.fluid} />
+                <Img fluid={data.group_photo.childImageSharp.fluid} />
               </Art>
             </Grid>
           </Container>
@@ -100,6 +100,8 @@ const Art = styled.figure`
 
   .gatsby-image-wrapper {
     max-height: 285px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px 10px;
   }
 `
 
