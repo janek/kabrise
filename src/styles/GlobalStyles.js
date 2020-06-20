@@ -54,7 +54,8 @@ const GlobalStyles = createGlobalStyle`
     ${props => props.theme.font_size.small};
     color: ${props => props.theme.color.black.light};
     text-align: justify;
-    padding-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {

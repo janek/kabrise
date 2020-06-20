@@ -11,10 +11,7 @@ const Team = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				art_team: file(
-					sourceInstanceName: { eq: "art" }
-					name: { eq: "temp_logo" }
-				) {
+				logo: file(sourceInstanceName: { eq: "art" }, name: { eq: "logo" }) {
 					childImageSharp {
 						fluid(maxWidth: 1600) {
 							...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -25,7 +22,7 @@ const Team = () => (
 		`}
 		render={data => (
 			<LogoContainer>
-				<Img fluid={data.art_team.childImageSharp.fluid} />
+				<Img fluid={data.logo.childImageSharp.fluid} />
 			</LogoContainer>
 		)}
 	/>
@@ -34,11 +31,11 @@ const Team = () => (
 const LogoContainer = styled.div`
 	width: 100%;
 	height: 100%;
-	max-width: 100px;
+	max-width: 200px;
 	max-height: 100px;
 
-	@media (max-width: ${props => props.theme.screen.sm}) {
-		max-width: 60px;
+	@media (max-width: ${props => props.theme.screen.md}) {
+		max-width: 130px;
 		max-height: 60px;
 	}
 `

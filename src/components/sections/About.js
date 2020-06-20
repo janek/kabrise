@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
-import YoutubeIcon from "@static/icons/youtube.svg"
+import YellowCircle from "@static/icons/yellow_circle.svg"
 
 const About = () => (
   <StaticQuery
@@ -27,7 +27,7 @@ const About = () => (
         <AboutWrapper>
           <Container>
             <Circles>
-              <img src={YoutubeIcon} />
+              <img src={YellowCircle} />
             </Circles>
             <Grid>
               <div>

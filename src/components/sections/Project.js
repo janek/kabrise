@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
-import YoutubeIcon from "@static/icons/youtube.svg"
+import BlueIcon from "@static/icons/blue_circle.svg"
 
 const Project = () => (
   <StaticQuery
@@ -24,7 +24,7 @@ const Project = () => (
         <AboutWrapper>
           <Container>
             <Circles>
-              <img src={YoutubeIcon} />
+              <img src={BlueIcon} />
             </Circles>
             <Grid inverse>
               <Art>
@@ -35,8 +35,8 @@ const Project = () => (
                 <p>
                   In der ersten Projektphase im Juni und Juli 2020 leben wir in
                   der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
-                  vielen Städten verloren gegangen ist: Freiraum. Jeder der über
-                  tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
+                  vielen Städten verloren gegangen ist: Freiraum. Jeder der über
+                  tausend Räume, sowie deren Umgebung kann eine Bühne für Kunst
                   und Kultur sein. Diese nutzen wir gemeinsam mit eingeladenen
                   Personen sowohl für diversen kreativen Output als auch für die
                   Auseinandersetzung mit der Thematik Klimagerechtigkeit.
@@ -91,7 +91,7 @@ const Circles = styled.figure`
   max-height: 100px;
   max-width: 100px;
   margin-left: 70%;
-  margin-bottom: -10%;
+  margin-bottom: -5%;
   
   .img {
     max-height: 285px;
