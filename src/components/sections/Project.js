@@ -2,53 +2,54 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 import { Section, Container } from "@components/global"
 import BlueIcon from "@static/icons/blue_circle.svg"
 
-const Project = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        stage: file(sourceInstanceName: { eq: "art" }, name: { eq: "stage" }) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Project = () => {
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          stage: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "stage" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <Section id="project">
-        <AboutWrapper>
-          <Container>
-            <Circles>
-              <img src={BlueIcon} />
-            </Circles>
-            <Grid inverse>
-              <Art>
-                <Img fluid={data.stage.childImageSharp.fluid} />
-              </Art>
-              <div>
-                <h2>Was wir machen</h2>
-                <p>
-                  In der ersten Projektphase im Juni und Juli 2020 leben wir in
-                  der alten Heilstätte am Grabowsee. Diese bietet etwas, das in
-                  vielen Städten verloren gegangen ist: Freiraum. Jeder einzelne
-                  der tausend Räume kann eine Bühne für Kunst und Kultur sein.
-                  Diese nutzen wir gemeinsam mit eingeladenen Personen sowohl
-                  für diversen kreativen Output als auch für die
-                  Auseinandersetzung mit der Thematik Klimagerechtigkeit.
-                </p>
-              </div>
-            </Grid>
-          </Container>
-        </AboutWrapper>
-      </Section>
-    )}
-  />
-)
+      `}
+      render={data => (
+        <Section id="project">
+          <AboutWrapper>
+            <Container>
+              <Circles>
+                <img src={BlueIcon} />
+              </Circles>
+              <Grid inverse>
+                <Art>
+                  <Img fluid={data.stage.childImageSharp.fluid} />
+                </Art>
+                <div>
+                  <h2>
+                    {intl.formatMessage({ id: "sections.project.title" })}
+                  </h2>
+                  <p>{intl.formatMessage({ id: "sections.project.text" })}</p>
+                </div>
+              </Grid>
+            </Container>
+          </AboutWrapper>
+        </Section>
+      )}
+    />
+  )
+}
 
 const AboutWrapper = styled.div`
   background-color: ${props => props.theme.color.primary};

@@ -1,4 +1,10 @@
 {
+	"navbar.about": "about",
+	"navbar.project": "project",
+	"navbar.focus": "focus",
+	"header.opencall": "Open Call for artists",
+	"header.apply.text": "apply now",
+	"header.apply.link": "https://kabrisekollektiv.typeform.com/to/qFzMGhBy",
 	"sections.about.title": "Who we are",
 	"sections.about.text": "Kabrise is a recently founded collective, consisting of people that are part of the art and culture scene. We get together to look into sustainability, out of a social as well as an ecological perspective. The room we are creating is one to invite ideas and ideals, think about and call out to act for a better world and take responsibility for our future. Nonviolent communication is one of our basic principles and we are happy to receive feedback at any time, to be able to learn and develop consistently!",
 	"sections.project.title": "What we do",

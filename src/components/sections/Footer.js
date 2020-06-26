@@ -6,48 +6,48 @@ import Img from "gatsby-image"
 import { Container } from "@components/global"
 import ExternalLink from "@common/ExternalLink"
 
-const Footer = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        dancer_two: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "dancer_two" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 960) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Footer = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          dancer_two: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "dancer_two" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 960) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <React.Fragment>
-        <Art>
-          <Img
-            fluid={data.dancer_two.childImageSharp.fluid}
-            style={{ width: 480, maxWidth: "100%", marginBottom: -16 }}
-          />
-        </Art>
-        <FooterWrapper>
-          <StyledContainer>
-            <Copyright>
-              <span>
-                Follow
-                {` `}
-                <ExternalLink href="https://instagram.com/kabrise_">
-                  <b>@kabrise_</b> on Instagram
-                </ExternalLink>
-              </span>
-            </Copyright>
-          </StyledContainer>
-        </FooterWrapper>
-      </React.Fragment>
-    )}
-  />
-)
-
+      `}
+      render={data => (
+        <React.Fragment>
+          <Art>
+            <Img
+              fluid={data.dancer_two.childImageSharp.fluid}
+              style={{ width: 480, maxWidth: "100%", marginBottom: -16 }}
+            />
+          </Art>
+          <FooterWrapper>
+            <StyledContainer>
+              <Copyright>
+                <span>
+                  Instagram:{" "}
+                  <ExternalLink href="https://instagram.com/kabrise_">
+                    <b>@kabrise_</b>
+                  </ExternalLink>
+                </span>
+              </Copyright>
+            </StyledContainer>
+          </FooterWrapper>
+        </React.Fragment>
+      )}
+    />
+  )
+}
 const SocialIcons = styled.div`
   display: flex;
 

@@ -2,83 +2,67 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 
 import { Container } from "@components/global"
 import ExternalLink from "@common/ExternalLink"
 
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        dancer: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "dancer_one" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Header = () => {
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          dancer: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "dancer_one" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <HeaderWrapper>
-        <Container>
-          <Grid>
-            <Art>
-              <Img fluid={data.dancer.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1>
-                Open call for artists
+      `}
+      render={data => (
+        <HeaderWrapper>
+          <Container>
+            <Grid>
+              <Art>
+                <Img fluid={data.dancer.childImageSharp.fluid} />
+              </Art>
+              <Text>
+                <h1>
+                  {intl.formatMessage({ id: "header.opencall" })}
+                  <br />
+                  15.06 - 15.07
+                </h1>
                 <br />
-                15.06 - 15.07
-              </h1>
-              <br />
-              <ApplicationLinksWrapper>
-                <StyledExternalLink href="/apply-en/">
-                  apply now (EN){" "}
-                  <span style={{ color: "#FBDE4E" }}>&nbsp;&#x2794;</span>
-                </StyledExternalLink>
-              </ApplicationLinksWrapper>
-              <ApplicationLinksWrapperYellow>
-                <StyledExternalLink href="/apply-de/">
-                  hier bewerben (DE){" "}
-                  <span style={{ color: "#4260A4" }}>&nbsp;&#x2794;</span>
-                </StyledExternalLink>
-              </ApplicationLinksWrapperYellow>
-            </Text>
-          </Grid>
-        </Container>
-      </HeaderWrapper>
-    )}
-  />
-)
+                <ApplicationLinksWrapper>
+                  <StyledExternalLink href="/apply/">
+                    {intl.formatMessage({ id: "header.apply.text" })}{" "}
+                    <span style={{ color: "#3d5ea9" }}>&nbsp;&#x2794;</span>
+                  </StyledExternalLink>
+                </ApplicationLinksWrapper>
+              </Text>
+            </Grid>
+          </Container>
+        </HeaderWrapper>
+      )}
+    />
+  )
+}
 
 const ApplicationLinksWrapper = styled.div`
   border-radius: 10px;
   -webkit-border-radius: 10px 10px;
+  padding: 10px 10px;
   width: 200px;
   margin-bottom: 10px;
 
   :hover {
-    padding: 10px 10px;
-    background-color: #3d5ea9;
-    color: white;
-  }
-`
-
-const ApplicationLinksWrapperYellow = styled.div`
-  border-radius: 10px;
-  -webkit-border-radius: 10px 10px;
-  width: 200px;
-  margin-bottom: 10px;
-
-  :hover {
-    background-color: #ffdf10;
-    color: black;
-    padding: 10px 10px;
+    background-color: #fbde4e;
   }
 `
 

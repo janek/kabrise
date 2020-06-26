@@ -2,59 +2,52 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 import { Section, Container } from "@components/global"
 import YellowCircle from "@static/icons/yellow_circle.svg"
 
-const About = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        group_photo: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "group_photo" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const About = () => {
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          group_photo: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "group_photo" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <Section id="about">
-        <AboutWrapper>
-          <Container>
-            <Circles>
-              <img src={YellowCircle} />
-            </Circles>
-            <Grid>
-              <div>
-                <h2>Wer wir sind</h2>
-                <p>
-                  Kabrise ist ein frisch gegründetes Kollektiv, bestehend aus
-                  Kultur- und Kunstschaffenden. Wir kommen zusammen, um uns
-                  gemeinsam mit ökologischer und sozialer Nachhaltigkeit
-                  auseinanderzusetzen. Wir kreieren einen Raum des Lernens, in
-                  den wir Ideen und Vorbilder einladen, um gemeinsam eine
-                  bessere Welt zu denken, zum Handeln aufzurufen und
-                  Verantwortung für die Zukunft zu übernehmen. Gewaltfreie,
-                  direkte und achtsame Kommunikation gehören zu unseren
-                  Grundprinzipien und wir freuen uns über Feedback, denn nur so
-                  können wir lernen und uns langfristig entwickeln.
-                </p>
-              </div>
-              <Art>
-                <Img fluid={data.group_photo.childImageSharp.fluid} />
-              </Art>
-            </Grid>
-          </Container>
-        </AboutWrapper>
-      </Section>
-    )}
-  />
-)
+      `}
+      render={data => (
+        <Section id="about">
+          <AboutWrapper>
+            <Container>
+              <Circles>
+                <img src={YellowCircle} />
+              </Circles>
+              <Grid>
+                <div>
+                  <h2>{intl.formatMessage({ id: "sections.about.title" })}</h2>
+                  <p>{intl.formatMessage({ id: "sections.about.text" })}</p>
+                </div>
+                <Art>
+                  <Img fluid={data.group_photo.childImageSharp.fluid} />
+                </Art>
+              </Grid>
+            </Container>
+          </AboutWrapper>
+        </Section>
+      )}
+    />
+  )
+}
 
 const AboutWrapper = styled.div`
   background-color: ${props => props.theme.color.primary};

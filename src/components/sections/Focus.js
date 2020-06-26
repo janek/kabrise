@@ -2,57 +2,52 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 import { Section, Container } from "@components/global"
 import RedIcon from "@static/icons/red_circle.svg"
 
-const Focus = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        work_group: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "work_group" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Focus = () => {
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          work_group: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "work_group" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <Section id="focus">
-        <AboutWrapper>
-          <Container>
-            <Circles>
-              <img src={RedIcon} />
-            </Circles>
-            <Grid>
-              <div>
-                <h2>Wo der Fokus liegt</h2>
-                <p>
-                  In unserem Format <i>„Heilstätte Zukunft”</i> laden wir
-                  Expert*innen für einen gemeinsamen Diskurs ein. Filmisch
-                  inszeniert stellen wir konkrete Lösungsansätze und Projekte
-                  vor, die mit den gewonnenen Erkenntnissen bereits erfolgreich
-                  arbeiten. Zum Start des Formates befassen wir uns mit
-                  Nachhaltigkeit im Kulturbetrieb und beleuchten dabei die
-                  Klub-, Theater- und Kunstszene.
-                </p>
-              </div>
-              <Art>
-                <Img fluid={data.work_group.childImageSharp.fluid} />
-              </Art>
-            </Grid>
-          </Container>
-        </AboutWrapper>
-      </Section>
-    )}
-  />
-)
-
+      `}
+      render={data => (
+        <Section id="focus">
+          <AboutWrapper>
+            <Container>
+              <Circles>
+                <img src={RedIcon} />
+              </Circles>
+              <Grid>
+                <div>
+                  <h2>{intl.formatMessage({ id: "sections.focus.title" })}</h2>
+                  <p>{intl.formatMessage({ id: "sections.focus.text" })}</p>
+                </div>
+                <Art>
+                  <Img fluid={data.work_group.childImageSharp.fluid} />
+                </Art>
+              </Grid>
+            </Container>
+          </AboutWrapper>
+        </Section>
+      )}
+    />
+  )
+}
 const AboutWrapper = styled.div`
   background-color: ${props => props.theme.color.primary};
 `
