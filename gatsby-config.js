@@ -36,6 +36,15 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`de`, "en"],
+        defaultLanguage: `de`,
+        redirect: true
+      }
+    },
+    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
