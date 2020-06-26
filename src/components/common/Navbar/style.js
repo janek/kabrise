@@ -20,6 +20,9 @@ export const StyledContainer = styled(Container)`
 export const NavListWrapper = styled.div`
   display: flex;
   flex-direction: ${props => (props.mobile ? "column" : "row")};
+  font-family: ${props => props.theme.font.menu};
+  ${props => props.theme.font_size.regular};
+
   ul {
     list-style: none;
     margin: 0;
@@ -38,6 +41,26 @@ export const NavListWrapper = styled.div`
           margin-top: 0.75em;
         }
       `};
+  }
+
+  li {
+    margin: 0 0.75em;
+
+    a {
+      text-decoration: none;
+      opacity: 0.7;
+      color: ${props => props.theme.color.black.regular};
+
+      :hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      a {
+        opacity: 1;
+      }
+    }
   }
 `
 
