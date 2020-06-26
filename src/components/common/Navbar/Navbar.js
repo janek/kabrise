@@ -17,6 +17,8 @@ import {
   Mobile
 } from "./style"
 
+import Language from "./Language"
+
 import { ReactComponent as MenuIcon } from "@static/icons/menu.svg"
 
 import InstagramIcon from "@static/icons/instagram.svg"
@@ -81,6 +83,7 @@ class Navbar extends Component {
           <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
+      <Language />
     </NavListWrapper>
   )
 
