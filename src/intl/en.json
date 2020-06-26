@@ -1,16 +1,8 @@
 {
-	"sections": {
-		"about": {
-			"title": "Who we are",
-			"text": "Kabrise is a recently founded collective, consisting of people that are part of the art and culture scene. We get together to look into sustainability, out of a social as well as an ecological perspective. The room we are creating is one to invite ideas and ideals, think about and call out to act for a better world and take responsibility for our future. Nonviolent communication is one of our basic principles and we are happy to receive feedback at any time, to be able to learn and develop consistently!"
-		},
-		"project": {
-			"title": "What we do",
-			"text": "For the first part of our project, taking place in June/July 2020, we moved into the sanatorium “Grabowsee” - which offers something that got lost in most cities: space! Every single room on the whole ground, as well as the surroundings can be used as a stage for art and culture. We want to make use of it and invite experts to create output concerning climate justice and learn from one and another."
-		},
-		"focus": {
-			"title": "What the focus is on",
-			"text": "Within the format “Future Sanatorium” we invite experts to join our discourse about climate justice and introduce projects that already work with a method of resolution. To take off with “Future Sanatorium” we focus on the connection between Climate change and club-, theater- and art- culture."
-		}
-	}
+	"sections.about.title": "Who we are",
+	"sections.about.text": "Kabrise is a recently founded collective, consisting of people that are part of the art and culture scene. We get together to look into sustainability, out of a social as well as an ecological perspective. The room we are creating is one to invite ideas and ideals, think about and call out to act for a better world and take responsibility for our future. Nonviolent communication is one of our basic principles and we are happy to receive feedback at any time, to be able to learn and develop consistently!",
+	"sections.project.title": "What we do",
+	"sections.project.text": "For the first part of our project, taking place in June/July 2020, we moved into the sanatorium “Grabowsee” - which offers something that got lost in most cities: space! Every single room on the whole ground, as well as the surroundings can be used as a stage for art and culture. We want to make use of it and invite experts to create output concerning climate justice and learn from one and another.",
+	"sections.focus.title": "What the focus is on",
+	"sections.focus.text": "Within the format “Future Sanatorium” we invite experts to join our discourse about climate justice and introduce projects that already work with a method of resolution. To take off with “Future Sanatorium” we focus on the connection between Climate change and club-, theater- and art- culture."
 }
