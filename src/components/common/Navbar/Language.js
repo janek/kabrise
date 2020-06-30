@@ -9,23 +9,26 @@ const languageName = {
 const Language = () => {
   return (
     <div>
-      <IntlContextConsumer>
-        {({ languages, language: currentLocale }) =>
-          languages.map(language => (
-            <a
-              key={language}
-              onClick={() => changeLocale(language)}
-              style={{
-                margin: 10,
-                cursor: `pointer`,
-                color: currentLocale === language ? `black` : `#211e26`
-              }}
-            >
-              {languageName[language]}
-            </a>
-          ))
-        }
-      </IntlContextConsumer>
+      <ul>
+        <IntlContextConsumer>
+          {({ languages, language: currentLocale }) =>
+            languages.map(language => (
+              <li key={language}>
+                <a
+                  key={language}
+                  onClick={() => changeLocale(language)}
+                  style={{
+                    cursor: `pointer`,
+                    opacity: currentLocale === language ? 1 : 0.7
+                  }}
+                >
+                  {languageName[language]}
+                </a>
+              </li>
+            ))
+          }
+        </IntlContextConsumer>
+      </ul>
     </div>
   )
 }
