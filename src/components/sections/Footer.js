@@ -33,7 +33,15 @@ const Footer = () => {
           </Art>
           <FooterWrapper>
             <StyledContainer>
-              <form name="contact" method="POST" data-netlify="true">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="contact" value="contact" />
+
                 <p>
                   <label>
                     Your Name: <input type="text" name="name" />
