@@ -16,7 +16,7 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
-  label: Section text
+  label: Section Text
 - name: section_image
   type: file
   config:
