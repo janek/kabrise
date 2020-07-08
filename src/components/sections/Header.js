@@ -33,18 +33,11 @@ const Header = () => {
                 <Img fluid={data.dancer.childImageSharp.fluid} />
               </Art>
               <Text>
-                <h1>
-                  {intl.formatMessage({ id: "header.opencall" })}
-                  <br />
-                  15.06 - 15.07
-                </h1>
+                <h1>{intl.formatMessage({ id: "header.opencall" })}</h1>
                 <br />
-                <ApplicationLinksWrapper>
-                  <StyledExternalLink href="/apply/">
-                    {intl.formatMessage({ id: "header.apply.text" })}{" "}
-                    <span style={{ color: "#3d5ea9" }}>&nbsp;&#x2794;</span>
-                  </StyledExternalLink>
-                </ApplicationLinksWrapper>
+                <span style={{ color: "#3d5ea9" }}>
+                  {intl.formatMessage({ id: "header.apply.text" })}
+                </span>
               </Text>
             </Grid>
           </Container>
