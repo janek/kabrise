@@ -9,7 +9,13 @@ import ExternalLink from '@common/ExternalLink';
 
 const Header = () => {
 	const intl = useIntl();
-	// TODO: how to get an image from an image path? see the image plugin OR staticquery OR brevifolia docs
+	// TODO: get an image from an image path
+	// example from Brevifolia:
+	// childImageSharp {
+	//   fluid( maxWidth: 800 ) {
+	//     ...GatsbyImageSharpFluid
+	//   }
+	// }
 	return (
 		<StaticQuery
 			query={graphql`
