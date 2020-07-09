@@ -23,4 +23,5 @@ fields:
     maxSize: 64
   label: Section Image
 pages:
+- content/test-sections/fabi.md.md
 - content/test-sections/janek.md
