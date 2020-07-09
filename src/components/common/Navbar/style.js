@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import { Container } from '@components/global';
+import { Container } from "@components/global"
 
 export const Nav = styled.nav`
   padding: 16px 0;
@@ -9,15 +9,20 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   z-index: 1000;
-`;
+`
 
 export const StyledContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 export const NavListWrapper = styled.div`
+  display: flex;
+  flex-direction: ${props => (props.mobile ? "column" : "row")};
+  font-family: ${props => props.theme.font.menu};
+  ${props => props.theme.font_size.regular};
+
   ul {
     list-style: none;
     margin: 0;
@@ -37,12 +42,32 @@ export const NavListWrapper = styled.div`
         }
       `};
   }
-`;
+
+  li {
+    margin: 0 0.75em;
+
+    a {
+      text-decoration: none;
+      opacity: 0.7;
+      color: ${props => props.theme.color.black.regular};
+
+      :hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+`
 
 export const NavItem = styled.li`
   margin: 0 0.75em;
-  font-family: ${props => props.theme.font.secondary};
-  ${props => props.theme.font_size.small};
+  font-family: ${props => props.theme.font.menu};
+  ${props => props.theme.font_size.regular};
 
   a {
     text-decoration: none;
@@ -55,17 +80,21 @@ export const NavItem = styled.li`
       opacity: 1;
     }
   }
-`;
+`
 
 export const MobileMenu = styled.div`
   width: 100%;
   background: ${props => props.theme.color.primary};
-`;
+  text-align: center;
+  a {
+    font-size: 42px;
+  }
+`
 
 export const Brand = styled.div`
-  font-family: ${props => props.theme.font.primary};
+  font-family: ${props => props.theme.font.headers};
   ${props => props.theme.font_size.large};
-`;
+`
 
 export const Mobile = styled.div`
   display: none;
@@ -83,4 +112,4 @@ export const Mobile = styled.div`
       display: none;
     }
   `}
-`;
+`

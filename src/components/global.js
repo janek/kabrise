@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -27,21 +27,21 @@ export const Container = styled.div`
     `
     max-width: 1200px !important;
   `};
-`;
+`
 
 export const Section = styled.section`
-  padding: 128px 0;
+  padding: 40px 0;
   overflow: hidden;
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    padding: 96px 0;
+    padding: 40px 0;
   }
 
   ${props =>
     props.accent &&
     `background-color: ${
-      props.accent === 'secondary'
+      props.accent === "secondary"
         ? props.theme.color.white.dark
         : props.theme.color.primary
     }`};
-`;
+`

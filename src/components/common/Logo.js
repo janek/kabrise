@@ -5,22 +5,13 @@ import Img from "gatsby-image"
 
 import { Section, Container } from "@components/global"
 
-const TEAM = [
-	{
-		name: "Josh Peck",
-		image: "josh.jpg",
-		role: "Founder"
-	}
-]
+// TODO: clean nearly everything from here
 
 const Team = () => (
 	<StaticQuery
 		query={graphql`
 			query {
-				art_team: file(
-					sourceInstanceName: { eq: "art" }
-					name: { eq: "team_work" }
-				) {
+				logo: file(sourceInstanceName: { eq: "art" }, name: { eq: "logo" }) {
 					childImageSharp {
 						fluid(maxWidth: 1600) {
 							...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -31,15 +22,22 @@ const Team = () => (
 		`}
 		render={data => (
 			<LogoContainer>
-				<Img fluid={data.art_team.childImageSharp.fluid} />
+				<Img fluid={data.logo.childImageSharp.fluid} />
 			</LogoContainer>
 		)}
 	/>
 )
 
 const LogoContainer = styled.div`
-	width: 100px;
-	height: 100px;
+	width: 100%;
+	height: 100%;
+	max-width: 200px;
+	max-height: 100px;
+
+	@media (max-width: ${props => props.theme.screen.md}) {
+		max-width: 130px;
+		max-height: 60px;
+	}
 `
 
 const TeamGrid = styled.div`

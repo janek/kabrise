@@ -17,13 +17,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `team`,
-        path: `${__dirname}/src/images/team`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `art`,
         path: `${__dirname}/src/images/art`
       }
@@ -33,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Absurd`,
-        short_name: `absurd`,
+        name: `Kabrise`,
+        short_name: `kabrise`,
         start_url: `/`,
         background_color: `#8bd8ed`,
         theme_color: `#8bd8ed`,
@@ -43,11 +36,12 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-intl`,
       options: {
-        google: {
-          families: ["Alegreya Sans"] // TODO: only small
-        }
+        path: `${__dirname}/src/intl`,
+        languages: [`de`, "en"],
+        defaultLanguage: `de`,
+        redirect: true
       }
     },
     {

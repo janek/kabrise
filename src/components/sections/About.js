@@ -1,114 +1,67 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react"
+import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
-import { Section, Container } from '@components/global';
+import { Section, Container } from "@components/global"
+import YellowCircle from "@static/icons/yellow_circle.svg"
 
-const About = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const About = () => {
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          group_photo: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "group_photo" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
+      `}
+      render={data => (
+        <Section id="about">
+          <AboutWrapper>
+            <Container>
+              <Circles>
+                <img src={YellowCircle} />
+              </Circles>
+              <Grid>
+                <div>
+                  <h2>{intl.formatMessage({ id: "sections.about.title" })}</h2>
+                  <p>{intl.formatMessage({ id: "sections.about.text" })}</p>
+                </div>
+                <Art>
+                  <Img fluid={data.group_photo.childImageSharp.fluid} />
+                </Art>
+              </Grid>
+            </Container>
+          </AboutWrapper>
+        </Section>
+      )}
+    />
+  )
+}
 
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Section id="about">
-        <Container>
-          <Grid>
-            <div>
-              <h2>Speed past the competition</h2>
-              <p>
-                Gatsby.js builds the fastest possible website. Instead of
-                waiting to generate pages when requested, pre-build pages and
-                lift them into a global cloud of servers — ready to be delivered
-                instantly to your users wherever they are.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-          <Grid inverse>
-            <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
-            </Art>
-            <div>
-              <h2>Nothing new to learn here</h2>
-              <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
-              </p>
-            </div>
-          </Grid>
-          <Grid>
-            <div>
-              <h2>Grow and build your ideas</h2>
-              <p>
-                Waste no more time on tooling and performance. Focus on the the
-                site you want to build and nothing more.
-                <br />
-                <br />
-                Gatsby is fast in every way that matters.
-              </p>
-            </div>
-            <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
-            </Art>
-          </Grid>
-        </Container>
-      </Section>
-    )}
-  />
-);
+const AboutWrapper = styled.div`
+  background-color: ${props => props.theme.color.primary};
+`
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 40px;
-  text-align: right;
   align-items: center;
   justify-items: center;
   margin: 24px 0;
-
-  ${props =>
-    props.inverse &&
-    `
-    text-align: left;
-    grid-template-columns: 2fr 3fr;
-  `}
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   h2 {
     margin-bottom: 16px;
@@ -131,12 +84,30 @@ const Grid = styled.div`
         }
     `}
   }
-`;
+`
 
 const Art = styled.figure`
   margin: 0;
-  max-width: 380px;
+  max-width: 760px;
   width: 100%;
-`;
 
-export default About;
+  .gatsby-image-wrapper {
+    max-height: 285px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px 10px;
+  }
+`
+
+const Circles = styled.figure`
+  max-height: 100px;
+  max-width: 100px;
+  margin-left: 40%;
+  margin-bottom: -10%;
+  
+  .img {
+    max-height: 285px;
+    margin 0 auto;
+  }
+`
+
+export default About

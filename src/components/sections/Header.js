@@ -1,68 +1,81 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react"
+import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 
-import { Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
+import { Container } from "@components/global"
+import ExternalLink from "@common/ExternalLink"
 
-const Header = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        art_build: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "build" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+const Header = () => {
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          dancer: file(
+            sourceInstanceName: { eq: "art" }
+            name: { eq: "dancer_one" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 760) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
             }
           }
         }
-      }
-    `}
-    render={data => (
-      <HeaderWrapper>
-        <Container>
-          <Grid>
-            <Art>
-              <Img fluid={data.art_build.childImageSharp.fluid} />
-            </Art>
-            <Text>
-              <h1>
-                Fast in
+      `}
+      render={data => (
+        <HeaderWrapper>
+          <Container>
+            <Grid>
+              <Art>
+                <Img fluid={data.dancer.childImageSharp.fluid} />
+              </Art>
+              <Text>
+                <h1>{intl.formatMessage({ id: "header.opencall" })}</h1>
                 <br />
-                every way
-                <br />
-                that matters
-              </h1>
-              <br />
-              <p>
-                <StyledExternalLink href="https://github.com/ajayns/gatsby-absurd">
-                  Check out source &nbsp;&#x2794;
-                </StyledExternalLink>
-              </p>
-            </Text>
-          </Grid>
-        </Container>
-      </HeaderWrapper>
-    )}
-  />
-);
+                <span style={{ color: "#3d5ea9" }}>
+                  {intl.formatMessage({ id: "header.apply.text" })}
+                </span>
+              </Text>
+            </Grid>
+          </Container>
+        </HeaderWrapper>
+      )}
+    />
+  )
+}
+
+const ApplicationLinksWrapper = styled.div`
+  border-radius: 10px;
+  -webkit-border-radius: 10px 10px;
+  padding: 10px 10px;
+  width: 200px;
+  margin-bottom: 10px;
+
+  :hover {
+    background-color: #fbde4e;
+  }
+`
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.color.primary};
+  margin-bottom: -160px;
+  background-color: ${props => props.theme.color.white};
   padding-top: 96px;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
   }
-`;
+`
 
 const Art = styled.figure`
-  width: 100%;
+  width: 60%;
   margin: 0;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width: 100%;
+  }
 
   > div {
     width: 120%;
@@ -72,7 +85,7 @@ const Art = styled.figure`
       width: 100%;
     }
   }
-`;
+`
 
 const Grid = styled.div`
   display: grid;
@@ -88,7 +101,7 @@ const Grid = styled.div`
       order: 2;
     }
   }
-`;
+`
 
 const Text = styled.div`
   justify-self: center;
@@ -96,15 +109,15 @@ const Text = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
   }
-`;
+`
 
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
   text-decoration: none;
-
-  &:hover {
+  display: block;
+  s &:hover {
     color: ${props => props.theme.color.black.regular};
   }
-`;
+`
 
-export default Header;
+export default Header
