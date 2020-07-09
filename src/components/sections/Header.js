@@ -1,17 +1,18 @@
-import React from "react"
-import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import React from 'react';
+import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { useIntl, FormattedMessage } from 'gatsby-plugin-intl';
 
-import { Container } from "@components/global"
-import ExternalLink from "@common/ExternalLink"
+import { Container } from '@components/global';
+import ExternalLink from '@common/ExternalLink';
 
 const Header = () => {
-  const intl = useIntl()
-  return (
-    <StaticQuery
-      query={graphql`
+	const intl = useIntl();
+	// TODO: how to get an image from an image path? see the image plugin OR staticquery OR brevifolia docs
+	return (
+		<StaticQuery
+			query={graphql`
         query {
           dancer: file(
             sourceInstanceName: { eq: "art" }
@@ -23,29 +24,43 @@ const Header = () => {
               }
             }
           }
+          allMarkdownRemark {
+            edges {
+              node {
+                frontmatter {
+                  section_title
+                  section_image
+                  section_text
+                }
+                rawMarkdownBody
+              }
+            }
+          }
         }
       `}
-      render={data => (
-        <HeaderWrapper>
-          <Container>
-            <Grid>
-              <Art>
-                <Img fluid={data.dancer.childImageSharp.fluid} />
-              </Art>
-              <Text>
-                <h1>{intl.formatMessage({ id: "header.opencall" })}</h1>
-                <br />
-                <span style={{ color: "#3d5ea9" }}>
-                  {intl.formatMessage({ id: "header.apply.text" })}
-                </span>
-              </Text>
-            </Grid>
-          </Container>
-        </HeaderWrapper>
-      )}
-    />
-  )
-}
+			render={data => (
+				<HeaderWrapper>
+					<Container>
+						<Grid>
+							<Art>
+								<Img fluid={data.dancer.childImageSharp.fluid} />
+							</Art>
+							<Text>
+								<h1>{intl.formatMessage({ id: 'header.opencall' })}</h1>
+								<br />
+								<span style={{ color: '#3d5ea9' }}>{intl.formatMessage({ id: 'header.apply.text' })}</span>
+							</Text>
+						</Grid>
+					</Container>
+					<Text>
+						<h1>{data.allMarkdownRemark.edges[0].node.rawMarkdownBody}</h1>
+						<h1>{data.allMarkdownRemark.edges[1].node.rawMarkdownBody}</h1>
+					</Text>
+				</HeaderWrapper>
+			)}
+		/>
+	);
+};
 
 const ApplicationLinksWrapper = styled.div`
   border-radius: 10px;
@@ -57,7 +72,7 @@ const ApplicationLinksWrapper = styled.div`
   :hover {
     background-color: #fbde4e;
   }
-`
+`;
 
 const HeaderWrapper = styled.header`
   margin-bottom: -160px;
@@ -67,7 +82,7 @@ const HeaderWrapper = styled.header`
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 128px;
   }
-`
+`;
 
 const Art = styled.figure`
   width: 60%;
@@ -85,7 +100,7 @@ const Art = styled.figure`
       width: 100%;
     }
   }
-`
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -101,7 +116,7 @@ const Grid = styled.div`
       order: 2;
     }
   }
-`
+`;
 
 const Text = styled.div`
   justify-self: center;
@@ -109,7 +124,7 @@ const Text = styled.div`
   @media (max-width: ${props => props.theme.screen.md}) {
     justify-self: start;
   }
-`
+`;
 
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
@@ -118,6 +133,6 @@ const StyledExternalLink = styled(ExternalLink)`
   s &:hover {
     color: ${props => props.theme.color.black.regular};
   }
-`
+`;
 
-export default Header
+export default Header;
