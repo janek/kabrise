@@ -1,17 +1,17 @@
-import React from "react"
-import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import React from 'react';
+import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { useIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
 
-import { Section, Container } from "@components/global"
-import RedIcon from "@static/icons/red_circle.svg"
+import { Section, Container } from '@components/global';
+import RedIcon from '@static/icons/red_circle.svg';
 
 const Focus = () => {
-  const intl = useIntl()
-  return (
-    <StaticQuery
-      query={graphql`
+	const intl = useIntl();
+	return (
+		<StaticQuery
+			query={graphql`
         query {
           work_group: file(
             sourceInstanceName: { eq: "art" }
@@ -25,32 +25,27 @@ const Focus = () => {
           }
         }
       `}
-      render={data => (
-        <Section id="focus">
-          <AboutWrapper>
-            <Container>
-              <Circles>
-                <img src={RedIcon} />
-              </Circles>
-              <Grid>
-                <div>
-                  <h2>{intl.formatMessage({ id: "sections.focus.title" })}</h2>
-                  <p>{intl.formatMessage({ id: "sections.focus.text" })}</p>
-                </div>
-                <Art>
-                  <Img fluid={data.work_group.childImageSharp.fluid} />
-                </Art>
-              </Grid>
-            </Container>
-          </AboutWrapper>
-        </Section>
-      )}
-    />
-  )
-}
-const AboutWrapper = styled.div`
-  background-color: ${props => props.theme.color.primary};
-`
+			render={data => (
+				<Section id="focus">
+					<Container>
+						<Circles>
+							<img src={RedIcon} />
+						</Circles>
+						<Grid>
+							<div>
+								<h2>{intl.formatMessage({ id: 'sections.focus.title' })}</h2>
+								<p>{intl.formatMessage({ id: 'sections.focus.text' })}</p>
+							</div>
+							<Art>
+								<Img fluid={data.work_group.childImageSharp.fluid} />
+							</Art>
+						</Grid>
+					</Container>
+				</Section>
+			)}
+		/>
+	);
+};
 
 const Grid = styled.div`
   display: grid;
@@ -76,14 +71,14 @@ const Grid = styled.div`
     }
 
     ${props =>
-      props.inverse &&
-      `
+			props.inverse &&
+			`
         ${Art} {
           order: 2;
         }
     `}
   }
-`
+`;
 
 const Circles = styled.figure`
   max-height: 100px;
@@ -95,7 +90,7 @@ const Circles = styled.figure`
     max-height: 285px;
     margin 0 auto;
   }
-`
+`;
 
 const Art = styled.figure`
   margin: 0;
@@ -109,6 +104,6 @@ const Art = styled.figure`
     border-radius: 10px;
     -webkit-border-radius: 10px 10px;
   }
-`
+`;
 
-export default Focus
+export default Focus;
