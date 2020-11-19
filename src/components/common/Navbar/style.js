@@ -17,7 +17,7 @@ export const StyledContainer = styled(Container)`
 `
 
 export const NavListWrapper = styled.div`
-  display: flex;
+  display:  ${props => (props.mobile ? "flex" : "none")};
   flex-direction: ${props => (props.mobile ? "column" : "row")};
   font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.regular};
@@ -83,7 +83,6 @@ export const NavItem = styled.li`
 
 export const MobileMenu = styled.div`
   width: 100%;
-  background: ${props => props.theme.color.primary};
   text-align: center;
   a {
     font-size: 42px;
