@@ -29,9 +29,9 @@ const Project = () => {
       `}
       render={data => (
         <VideoWrapper id="video">
-          <video loop muted autoPlay>
+          <VideoPlayer loop muted autoPlay playsinline>
             <source src={BriseVideo} type="video/mp4" />
-          </video>
+          </VideoPlayer>
         </VideoWrapper>
       )}
     />
@@ -43,5 +43,15 @@ const VideoWrapper = styled.div`
   background-color: grey;
 `
 
+// XXX: We most likely need media queries for mobile screens
+// (see Navbar.js for examples)
+const VideoPlayer = styled.video`
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  
+  top: 0;
+  left: 0;
+`
 
 export default Project
