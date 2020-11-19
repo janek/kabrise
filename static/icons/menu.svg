@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="51.7" height="54,248" viewBox="0 0 94 98.636">
+  <g id="Group_96" data-name="Group 96" transform="translate(-1787 -75.364)">
+	<path id="Path_170" data-name="Path 170" d="M47,0C74.164,18.139,94,21.043,94,47A47,47,0,0,1,47,94C36.15,94,34.919,82.59,26.739,76.238,15.889,67.816,0,62.107,0,47,0,21.043,19.836-18.139,47,0Z" transform="translate(1787 80)" fill="#fff"/>
+	<text id="MENU" transform="translate(1804 134)" fill="#80807f" font-size="18" font-family="Helvetica" letter-spacing="0.2em"><tspan x="0" y="0">MENU</tspan></text>
+  </g>
+</svg>

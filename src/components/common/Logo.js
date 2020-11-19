@@ -18,11 +18,18 @@ const Team = () => (
 						}
 					}
 				}
+				logo_white: file(sourceInstanceName: { eq: "art" }, name: { eq: "logo_white" }) {
+					childImageSharp {
+						fluid(maxWidth: 1600) {
+							...GatsbyImageSharpFluid_withWebp_tracedSVG
+						}
+					}
+				}
 			}
 		`}
 		render={data => (
 			<LogoContainer>
-				<Img fluid={data.logo.childImageSharp.fluid} />
+				<Img fluid={data.logo_white.childImageSharp.fluid} />
 			</LogoContainer>
 		)}
 	/>
