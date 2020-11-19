@@ -7,7 +7,7 @@ import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 import { Section, Container } from "@components/global"
 import BlueIcon from "@static/icons/blue_circle.svg"
 
-const Project = () => {
+const Video = () => {
   const intl = useIntl()
   return (
     <StaticQuery
@@ -113,4 +113,4 @@ const Art = styled.figure`
   }
 `
 
-export default Project
+export default Video
