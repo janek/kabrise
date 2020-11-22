@@ -26,6 +26,10 @@ import InstagramIcon from "@static/icons/instagram.svg"
 import FacebookIcon from "@static/icons/facebook.svg"
 import YoutubeIcon from "@static/icons/youtube.svg"
 
+// TODO: This does NOT perform a dual desktop/mobile function anymore,
+// and therefore all that fat can be trimmed out
+// TODO: single source of truth for navbar and sidebar, or merge into one file
+
 const Navbar = props => {
   const SOCIAL = [
     {
