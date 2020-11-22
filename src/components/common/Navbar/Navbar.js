@@ -18,7 +18,7 @@ import {
   Mobile
 } from "./style"
 
-import Language from "./Language"
+import Language from "../Language"
 
 import { ReactComponent as MenuIcon } from "@static/icons/menu.svg"
 
@@ -91,7 +91,10 @@ const Navbar = props => {
         ))}
       </Scrollspy>
       <span style={{ color: "#3D5EA9" }}>•</span>
+      <ul>
       <Language />
+      </ul>
+      
     </NavListWrapper>
   )
 

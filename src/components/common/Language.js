@@ -9,11 +9,10 @@ const languageName = {
 const Language = () => {
   return (
     <div>
-      <ul>
         <IntlContextConsumer>
           {({ languages, language: currentLocale }) =>
             languages.map(language => (
-              <li key={language}>
+              <li class="language" key={language}>
                 <a
                   key={language}
                   onClick={() => changeLocale(language)}
@@ -28,7 +27,6 @@ const Language = () => {
             ))
           }
         </IntlContextConsumer>
-      </ul>
     </div>
   )
 }

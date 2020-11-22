@@ -8,7 +8,7 @@ import { Container } from "@components/global"
 import Logo from "@common/Logo"
 import ExternalLink from "@common/ExternalLink"
 
-// import Language from "./Language"
+import Language from "./Language"
 
 import { ReactComponent as MenuIcon } from "@static/icons/menu.svg"
 
@@ -29,29 +29,31 @@ export const Mobile = styled.div`
     }
   `}
 `
+
 // TODO: reconsider naming between here and Navbar
 export const NavListWrapper = styled.div`
-  padding: 16px 0;
+  padding: 10vh 0;
   position: fixed;
   width: 10vw;
   height: 100vh;
   top: 0;
   z-index: 1000;
-  display:  flex;
-  flex-direction: column;
-  justify-content: space-between;
   font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.regular};
+  font-size: 1.2em;
+  
+  .language {
+    margin: 30px;
+  }
   
   ul {
-    height: 40vh;
+    height: 80vh;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  
   }
   
   li {
@@ -96,7 +98,7 @@ export const NavItem = styled.li`
 
 const Sidebar = props => {
 
-  const NAV_ITEMS_RAW = ["about", "project", "focus"]
+  const NAV_ITEMS_RAW = ["video", "about", "projects", "contact"]
 
   const getNavAnchorLink = item => (
     <AnchorLink href={`#${item.toLowerCase()}`}>
@@ -113,11 +115,13 @@ const Sidebar = props => {
 
   const getNavList = () => (
     <NavListWrapper>
+      
       <Scrollspy
         items={NAV_ITEMS_RAW.map(item => item.toLowerCase())}
         currentClassName="active"
         offset={-64}
       >
+        <Language />
         {NAV_ITEMS_RAW.map(navItem => (
           <li key={navItem}>
             {getNavAnchorLink(intl.formatMessage({ id: "navbar." + navItem }))}

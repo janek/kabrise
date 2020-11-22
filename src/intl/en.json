@@ -1,7 +1,8 @@
 {
-	"navbar.about": "about",
-	"navbar.project": "project",
-	"navbar.focus": "focus",
+	"navbar.video": "video",
+	"navbar.about": "about us",
+	"navbar.projects": "projects",
+	"navbar.contact": "contact",
 	"header.title": "Where do culture and sutainibility meet?",
 	"header.subtitle": "Our first video will take a closer look at this question. More about it soon here and on our social media channels!",
 	"sections.about.title": "Who we are",

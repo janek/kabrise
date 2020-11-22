@@ -1,7 +1,8 @@
 {
+	"navbar.video": "video",
 	"navbar.about": "über uns",
-	"navbar.project": "projekt",
-	"navbar.focus": "fokus",
+	"navbar.projects": "projekte",
+	"navbar.contact": "kontakt",
 	"header.title": "Wo treffen sich Kultur und Nachhaltigeit?",
 	"header.subtitle": "Unser erstes Video wird diese Frage näher beleuchten. Mehr dazu bald hier und auf unseren Social Media Kanälen!",
 	"sections.about.title": "Wer wir sind",
