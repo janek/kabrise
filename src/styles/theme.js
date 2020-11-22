@@ -1,7 +1,7 @@
 const theme = {
   font: {
     headers: `'Recoleta', serif`,
-    menu: `'Bo', sans`,
+    menu: `'BoLight', sans`,
     text: `'BoLight', sans`
   },
   font_size: {
