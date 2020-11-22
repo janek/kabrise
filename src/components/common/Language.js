@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 
 const languageName = {
@@ -6,25 +7,45 @@ const languageName = {
   de: "de"
 }
 
+const LineSeparator = styled.div`
+  background-color: white;
+  margin: 0 auto
+  width: 1px;
+  height: 40px;
+`
+
 const Language = () => {
   return (
     <div>
         <IntlContextConsumer>
-          {({ languages, language: currentLocale }) =>
-            languages.map(language => (
-              <li class="language" key={language}>
+          {({ currentLocale }) =>
+            <div>
+              <li class="language" key={"en"}>
                 <a
-                  key={language}
-                  onClick={() => changeLocale(language)}
+                  key={"en"}
+                  onClick={() => changeLocale("en")}
                   style={{
                     cursor: `pointer`,
-                    opacity: currentLocale === language ? 1 : 0.7
+                    opacity: currentLocale === "en" ? 1 : 0.7
                   }}
                 >
-                  {languageName[language]}
+                  {"en".toUpperCase()}
                 </a>
               </li>
-            ))
+              <LineSeparator/>
+              <li class="language" key={"de"}>
+                <a
+                  key={"de"}
+                  onClick={() => changeLocale("de")}
+                  style={{
+                    cursor: `pointer`,
+                    opacity: currentLocale === "de" ? 1 : 0.7
+                  }}
+                >
+                  {"de".toUpperCase()}
+                </a>
+              </li>
+            </div>
           }
         </IntlContextConsumer>
     </div>

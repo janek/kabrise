@@ -31,23 +31,26 @@ export const Mobile = styled.div`
 `
 
 // TODO: reconsider naming between here and Navbar
+
+// Q: I want to anchor sth at the bottom, 
+// but I count from the top. Is there a better way?
 export const NavListWrapper = styled.div`
-  padding: 10vh 0;
   position: fixed;
+  margin-top: 30vh; 
   width: 10vw;
   height: 100vh;
   top: 0;
   z-index: 1000;
   font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.regular};
-  font-size: 1.2em;
-  
+  font-size: 1.5em;
+
   .language {
-    margin: 30px;
+    margin: 40px; 
   }
-  
+    
   ul {
-    height: 80vh;
+    height: 60vh;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -58,7 +61,6 @@ export const NavListWrapper = styled.div`
   
   li {
     transform: rotate(-90deg);
-    margin: 0 0.75em;
   
     a {
       text-decoration: none;
