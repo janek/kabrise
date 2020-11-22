@@ -38,8 +38,8 @@ const Team = () => (
 const LogoContainer = styled.div`
 	width: 100%;
 	height: 100%;
-	max-width: 200px;
-	max-height: 100px;
+	max-width: 160px;
+	max-height: 80px;
 
 	@media (max-width: ${props => props.theme.screen.md}) {
 		max-width: 130px;

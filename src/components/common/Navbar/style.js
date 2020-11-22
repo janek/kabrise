@@ -11,6 +11,7 @@ export const Nav = styled.nav`
 `
 
 export const StyledContainer = styled(Container)`
+  margin: 1vh 1vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
