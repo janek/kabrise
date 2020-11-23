@@ -5,8 +5,9 @@ import Img from 'gatsby-image';
 
 import { Container } from '@components/global';
 import ExternalLink from '@common/ExternalLink';
+import Button from '@common/Button';
 
-const Footer = () => {
+const Form = () => {
 	// TODO: if there aren't images, remove the StaticQuery
 	return (
 		<StaticQuery
@@ -28,19 +29,23 @@ const Footer = () => {
 				<React.Fragment>
 					<FooterWrapper>
 						<StyledContainer>
-							<Copyright>
-								<span>
-									<ExternalLink href="/impressum/">
-										<b>Impressum</b>
-									</ExternalLink>
-								</span>
-								<span>
-									Instagram:{' '}
-									<ExternalLink href="https://instagram.com/kabrise_">
-										<b>@kabrise_</b>
-									</ExternalLink>
-								</span>
-							</Copyright>
+							<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+								{/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+								<input type="hidden" name="contact" value="contact" />
+								<p>
+									<label>
+										Your Name: <input type="text" name="name" />
+									</label>
+								</p>
+								<p>
+									<label>
+										Your Email: <input type="email" name="email" />
+									</label>
+								</p>
+								<p>
+									<Button type="submit">Send</Button>
+								</p>
+							</form>
 						</StyledContainer>
 					</FooterWrapper>
 				</React.Fragment>
@@ -48,6 +53,7 @@ const Footer = () => {
 		/>
 	);
 };
+
 const SocialIcons = styled.div`
   display: flex;
 
@@ -96,4 +102,4 @@ const StyledContainer = styled(Container)`
   }
 `;
 
-export default Footer;
+export default Form;

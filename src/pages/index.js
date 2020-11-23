@@ -10,6 +10,7 @@ import About from '@sections/About';
 import Project from '@sections/Project';
 import Focus from '@sections/Focus';
 
+import Form from '@sections/Form';
 import Footer from '@sections/Footer';
 
 const IndexPage = () => (
@@ -20,7 +21,7 @@ const IndexPage = () => (
 		<Header />
 		<About />
 		<Project />
-		<Focus />
+		<Form />
 		<Footer />
 	</Layout>
 );
