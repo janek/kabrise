@@ -45,9 +45,7 @@ export const NavListWrapper = styled.div`
   ${props => props.theme.font_size.regular};
   font-size: 1.5em;
 
-  .language {
-    margin: 40px; 
-  }
+
     
   ul {
     height: 60vh;
