@@ -1,16 +1,21 @@
-import { styled } from "styled-components"
+import styled from "styled-components"
 // import { FlexGrid, FlexGridItem } from "baseui/flex-grid"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import * as React from "react"
 
-// const Image = styled(Img)`
-//   object-fit: "cover";
-//   object-position: "100% 0";
-//   width: "100%";
-//   height: "100%";
-//   max-height: "25rem";
-// `
+const Image = styled(Img)`
+  object-fit: "cover";
+  object-position: "100% 0";
+  width: "100%";
+  height: "100%";
+  maxheight: "25rem";
+`
+
+const A = styled.a`
+  width: 100%;
+  height: 100%;
+`
 
 const nodeURL = "https://www.instagram.com/p"
 
@@ -19,7 +24,7 @@ const Instagram = () => {
     allInstaNode: { edges },
   } = useStaticQuery(graphql`
     {
-      allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 12) {
+      allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 9) {
         edges {
           node {
             id
@@ -45,35 +50,31 @@ const Instagram = () => {
         localFile: { childImageSharp },
       } = node
       return (
-        <div key={id}>
-          <a href={`${nodeURL}/${id}`}>
-            <Img
-              loading="lazy"
-              alt={caption || ""}
-              fluid={childImageSharp.fluid}
-            />
-          </a>
-        </div>
+        <A key={id} href={`${nodeURL}/${id}`}>
+          <Image
+            loading="lazy"
+            alt={caption || ""}
+            fluid={childImageSharp.fluid}
+          />
+        </A>
       )
     })
-
     return images
   }
 
-  return (
-    // <FlexGrid
-    //   // Brackets specify the options for different breakpoints
-    //   // 1 column for small devices
-    //   // 2 columns for medium devices
-    //   // 3 columns for large devices
-    //   flexGridColumnCount={[1, 2, 3]}
-    //   flexGridColumnGap={["scale0", "scale200"]}
-    //   flexGridRowGap={["scale0", "scale200"]}
-    // >
-    //   {renderImages()}
-    // </FlexGrid>
-    <div>ok</div>
-  )
+  return <Grid>{renderImages()}</Grid>
 }
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-gap: 40px;
+  align-items: center;
+  justify-items: center;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    grid-template-columns: 1fr;
+  }
+`
 
 export default Instagram
