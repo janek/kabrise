@@ -76,7 +76,7 @@ const Grid = styled.div`
         ${Art} {
           order: 2;
         }
-    `}
+     `}
   }
 `;
 
