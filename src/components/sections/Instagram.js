@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import * as React from "react"
+import { Container } from "@components/global"
 
 //TODO: clean up styling, make sure non-square photos fill the sqare
 const Image = styled(Img)`
@@ -64,7 +65,13 @@ const Instagram = () => {
     return images
   }
 
-  return <Grid>{renderImages()}</Grid>
+  return (
+    <Container>
+      <h3> Instagram </h3>
+      <h1> Follow us </h1>
+      <Grid>{renderImages()}</Grid>
+    </Container>
+  )
 }
 
 const Grid = styled.div`
