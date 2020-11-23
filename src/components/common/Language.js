@@ -20,7 +20,7 @@ const Language = () => {
       <IntlContextConsumer>
         {({ currentLocale }) => (
           <div>
-            <li class="language" key={"en"}>
+            <li className="language" key={"en"}>
               <a
                 key={"en"}
                 onClick={() => changeLocale("en")}
@@ -33,7 +33,7 @@ const Language = () => {
               </a>
             </li>
             <LineSeparator />
-            <li class="language" key={"de"}>
+            <li className="language" key={"de"}>
               <a
                 key={"de"}
                 onClick={() => changeLocale("de")}
