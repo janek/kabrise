@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import * as React from "react"
 
+//TODO: clean up styling, make sure non-square photos fill the sqare
 const Image = styled(Img)`
   object-fit: "cover";
   object-position: "100% 0";
@@ -42,6 +43,7 @@ const Instagram = () => {
     }
   `)
 
+  // TODO: check for the mobile flag and only show 3 pics if the grid is a single column
   const renderImages = () => {
     const images = edges.map(({ node }) => {
       const {
@@ -66,6 +68,8 @@ const Instagram = () => {
 }
 
 const Grid = styled.div`
+  width: 60vw;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 3fr 3fr 3fr;
   grid-gap: 40px;
