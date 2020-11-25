@@ -68,18 +68,6 @@ export const NavItem = styled.li`
   margin: 0 0.75em;
   font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.regular};
-
-  a {
-    text-decoration: none;
-    opacity: 0.7;
-    color: ${props => props.theme.color.black.regular};
-  }
-
-  &.active {
-    a {
-      opacity: 1;
-    }
-  }
 `
 
 export const MobileMenu = styled.div`
