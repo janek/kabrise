@@ -66,11 +66,13 @@ const Instagram = () => {
   }
 
   return (
-    <Container>
-      <h3> Instagram </h3>
-      <h1> Follow us </h1>
-      <Grid>{renderImages()}</Grid>
-    </Container>
+    <section id="projects">
+      <Container>
+        <h3> Instagram </h3>
+        <h1> Follow us </h1>
+        <Grid>{renderImages()}</Grid>
+      </Container>
+    </section>
   )
 }
 
