@@ -1,17 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { useIntl, Link, FormattedMessage } from 'gatsby-plugin-intl';
+import React from "react"
+import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
-import { Section, Container } from '@components/global';
-import YellowCircle from '@static/icons/yellow_circle.svg';
+import { Section, Container } from "@components/global"
+import YellowCircle from "@static/icons/yellow_circle.svg"
 
 const About = () => {
-	const intl = useIntl();
-	return (
-		<StaticQuery
-			query={graphql`
+  const intl = useIntl()
+  return (
+    <StaticQuery
+      query={graphql`
         query {
           group_photo: file(
             sourceInstanceName: { eq: "art" }
@@ -25,27 +25,27 @@ const About = () => {
           }
         }
       `}
-			render={data => (
-				<Section id="about">
-					<Container>
-						<Circles>
-							<img src={YellowCircle} />
-						</Circles>
-						<Grid>
-							<div>
-								<h2>{intl.formatMessage({ id: 'sections.about.title' })}</h2>
-								<p>{intl.formatMessage({ id: 'sections.about.text' })}</p>
-							</div>
-							<Art>
-								<Img fluid={data.group_photo.childImageSharp.fluid} />
-							</Art>
-						</Grid>
-					</Container>
-				</Section>
-			)}
-		/>
-	);
-};
+      render={data => (
+        <Section id="about">
+          <Container>
+            <Circles>
+              <img src={YellowCircle} />
+            </Circles>
+            <Grid>
+              <div>
+                <h2>{intl.formatMessage({ id: "sections.about.title" })}</h2>
+                <p>{intl.formatMessage({ id: "sections.about.text" })}</p>
+              </div>
+              <Art>
+                <Img fluid={data.group_photo.childImageSharp.fluid} />
+              </Art>
+            </Grid>
+          </Container>
+        </Section>
+      )}
+    />
+  )
+}
 
 const Grid = styled.div`
   display: grid;
@@ -71,14 +71,14 @@ const Grid = styled.div`
     }
 
     ${props =>
-			props.inverse &&
-			`
+      props.inverse &&
+      `
         ${Art} {
           order: 2;
         }
      `}
   }
-`;
+`
 
 const Art = styled.figure`
   margin: 0;
@@ -90,7 +90,7 @@ const Art = styled.figure`
     border-radius: 10px;
     -webkit-border-radius: 10px 10px;
   }
-`;
+`
 
 const Circles = styled.figure`
   max-height: 100px;
@@ -102,6 +102,6 @@ const Circles = styled.figure`
     max-height: 285px;
     margin 0 auto;
   }
-`;
+`
 
-export default About;
+export default About

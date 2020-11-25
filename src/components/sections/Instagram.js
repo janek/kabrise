@@ -23,7 +23,7 @@ const nodeURL = "https://www.instagram.com/p"
 
 const Instagram = () => {
   const {
-    allInstaNode: { edges },
+    allInstaNode: { edges }
   } = useStaticQuery(graphql`
     {
       allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 9) {
@@ -50,7 +50,7 @@ const Instagram = () => {
       const {
         id,
         caption,
-        localFile: { childImageSharp },
+        localFile: { childImageSharp }
       } = node
       return (
         <A key={id} href={`${nodeURL}/${id}`}>

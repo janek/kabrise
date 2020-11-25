@@ -4,9 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
-
 import BriseVideo from "../../video/frische_brise_15sec.mp4"
-
 
 const Project = () => {
   const intl = useIntl()
@@ -49,7 +47,7 @@ const VideoPlayer = styled.video`
   object-fit: cover;
   width: 100vw;
   height: 100vh;
-  
+
   top: 0;
   left: 0;
 `

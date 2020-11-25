@@ -4,7 +4,7 @@ import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 
 const languageName = {
   en: "en",
-  de: "de",
+  de: "de"
 }
 
 const LineSeparator = styled.div`
@@ -26,7 +26,7 @@ const Language = () => {
                 onClick={() => changeLocale("en")}
                 style={{
                   cursor: `pointer`,
-                  opacity: currentLocale === "en" ? 1 : 0.7,
+                  opacity: currentLocale === "en" ? 1 : 0.7
                 }}
               >
                 {"en".toUpperCase()}
@@ -39,7 +39,7 @@ const Language = () => {
                 onClick={() => changeLocale("de")}
                 style={{
                   cursor: `pointer`,
-                  opacity: currentLocale === "de" ? 1 : 0.7,
+                  opacity: currentLocale === "de" ? 1 : 0.7
                 }}
               >
                 {"de".toUpperCase()}
