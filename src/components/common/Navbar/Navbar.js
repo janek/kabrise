@@ -61,17 +61,13 @@ const Navbar = props => {
   }
 
   const getNavAnchorLink = item => (
+    // This is broken because "item" is the translation, not the original
     <AnchorLink href={`#${item.toLowerCase()}`} onClick={closeMobileMenu}>
       {item}
     </AnchorLink>
   )
 
   const intl = useIntl()
-
-  const navItems = NAV_ITEMS_RAW.map(name => {
-    const targetString = "navbar" + "." + name
-    return intl.formatMessage({ id: targetString })
-  })
 
   const getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
