@@ -9,21 +9,33 @@ import YoutubeIcon from "@static/icons/youtube.svg"
 import ExternalLink from "@common/ExternalLink"
 
 // TODO: mobile
+// TODO unify colors
+// TODO: extract styles for "sticky to left/right" from here and from sidebar
 
-// TODO: extract "sticky to left/right" from here and from sidebar
 export const SocialMediaIconsWrapper = styled.div`
   position: fixed;
+  display: flex;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    display: none;
+  }
+
+  flex-direction: column;
+  justify-content: space-between;
   bottom: 0;
   right: 0;
-
-  width: 10vw;
-  height: 30vh;
-
+  width: 4vw;
   z-index: 1000;
+
+  a {
+    margin: 0 auto;
+  }
 `
 
-export const SocialMediaIcon = styled.a`
-  margin: 0 0.75em;
+export const SocialMediaIcon = styled.img`
+  width: 40px;
+  height: 40px;
+  margin: 10px 0px;
 `
 
 const SocialIcons = () => {
@@ -32,7 +44,6 @@ const SocialIcons = () => {
       icon: InstagramIcon,
       link: "https://instagram.com/kabrise_"
     },
-
     {
       icon: YoutubeIcon,
       link: "https://www.youtube.com/channel/UCue1EZ2sBVBZKEChwmLu2mg"
@@ -45,7 +56,7 @@ const SocialIcons = () => {
 
   const socialMediaElements = socialMediaLinksAndIcons.map(({ icon, link }) => (
     <ExternalLink key={link} href={link} title={link}>
-      <img src={icon} alt="link" />
+      <SocialMediaIcon src={icon} alt="link" />
     </ExternalLink>
   ))
 
