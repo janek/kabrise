@@ -94,7 +94,7 @@ export const NavItem = styled.li`
   }
 `
 
-const Sidebar = props => {
+const Sidebar = () => {
   const NAV_ITEMS_RAW = ["video", "about", "projects", "contact"]
 
   const getNavAnchorLink = item => (
@@ -102,11 +102,6 @@ const Sidebar = props => {
   )
 
   const intl = useIntl()
-
-  const navItems = NAV_ITEMS_RAW.map(name => {
-    const targetString = "navbar" + "." + name
-    return intl.formatMessage({ id: targetString })
-  })
 
   const getNavList = () => (
     <NavListWrapper>
