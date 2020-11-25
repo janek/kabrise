@@ -1,16 +1,11 @@
-import React, { Component, useState } from "react"
+import React from "react"
 import styled from "styled-components"
+
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import Scrollspy from "react-scrollspy"
-import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
-
-import { Container } from "@components/global"
-import Logo from "@common/Logo"
-import ExternalLink from "@common/ExternalLink"
+import { useIntl } from "gatsby-plugin-intl"
 
 import Language from "./Language"
-
-import { ReactComponent as MenuIcon } from "@static/icons/menu.svg"
 
 export const Mobile = styled.div`
   display: none;
