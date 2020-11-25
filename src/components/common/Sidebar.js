@@ -91,7 +91,9 @@ const Sidebar = () => {
       <Scrollspy
         items={NAV_ITEMS_RAW.map(item => item.toLowerCase())}
         currentClassName="active"
-        offset={-64}
+        // TODO: after expanding the contact section:
+        // test offset on different devices, adjust (maybe per-device)
+        offset={-1500}
       >
         <Language />
         {NAV_ITEMS_RAW.map(navItem => (
