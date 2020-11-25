@@ -2,13 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
-import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
-
 import BriseVideo from "../../video/frische_brise_15sec.mp4"
 
-const Project = () => {
-  const intl = useIntl()
-
+const Video = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -25,12 +21,14 @@ const Project = () => {
           }
         }
       `}
-      render={data => (
-        <VideoWrapper id="video">
-          <VideoPlayer loop muted autoPlay playsinline>
-            <source src={BriseVideo} type="video/mp4" />
-          </VideoPlayer>
-        </VideoWrapper>
+      render={() => (
+        <section id="video">
+          <VideoWrapper>
+            <VideoPlayer loop muted playsinline>
+              <source src={BriseVideo} type="video/mp4" />
+            </VideoPlayer>
+          </VideoWrapper>
+        </section>
       )}
     />
   )
@@ -52,4 +50,4 @@ const VideoPlayer = styled.video`
   left: 0;
 `
 
-export default Project
+export default Video

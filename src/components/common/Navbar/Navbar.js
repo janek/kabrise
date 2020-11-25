@@ -46,7 +46,7 @@ const Navbar = props => {
       link: "https://www.facebook.com/kabrisekollektiv"
     }
   ]
-  const NAV_ITEMS_RAW = ["about", "project", "focus"]
+  const NAV_ITEMS_RAW = ["video", "about", "projects", "contact"]
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 

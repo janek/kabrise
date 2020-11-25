@@ -10,45 +10,47 @@ import Button from "@common/Button"
 const Form = () => {
   // TODO: if there aren't images, remove the StaticQuery
   return (
-    <Container>
-      <hr />
-      <Grid>
-        <div>
-          <h2>Be part of the journey</h2>
-          <p>
-            If you are in need of a space or want to collaborate with us. Let’e
-            get in touch….
-          </p>
-        </div>
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="contact" value="contact" />
-          <p>
-            <label>
-              Your Name: <input type="text" name="name" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Email: <input type="email" name="email" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Message: <textarea name="message"></textarea>
-            </label>
-          </p>
-          <p>
-            <Button type="submit">get in touch</Button>
-          </p>
-        </form>
-      </Grid>
-    </Container>
+    <section id="contact">
+      <Container>
+        <hr />
+        <Grid>
+          <div>
+            <h2>Be part of the journey</h2>
+            <p>
+              If you are in need of a space or want to collaborate with us.
+              Let’e get in touch….
+            </p>
+          </div>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+            <input type="hidden" name="contact" value="contact" />
+            <p>
+              <label>
+                Your Name: <input type="text" name="name" />
+              </label>
+            </p>
+            <p>
+              <label>
+                Your Email: <input type="email" name="email" />
+              </label>
+            </p>
+            <p>
+              <label>
+                Message: <textarea name="message"></textarea>
+              </label>
+            </p>
+            <p>
+              <Button type="submit">get in touch</Button>
+            </p>
+          </form>
+        </Grid>
+      </Container>
+    </section>
   )
 }
 
