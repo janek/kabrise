@@ -39,6 +39,7 @@ export const NavListWrapper = styled.div`
   font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.regular};
   font-size: 1.5em;
+  background-color: inherit;
 
   ul {
     height: 60vh;
@@ -52,11 +53,13 @@ export const NavListWrapper = styled.div`
 
   li {
     transform: rotate(-90deg);
+    background-color: orange;
 
     a {
       text-decoration: none;
-      opacity: 0.7;
-      color: ${props => props.theme.color.primary};
+      opacity: 1;
+      color: white;
+      mix-blend-mode: difference;
 
       :hover {
         text-decoration: underline;
@@ -66,6 +69,9 @@ export const NavListWrapper = styled.div`
     &.active {
       a {
         opacity: 1;
+      }
+      li {
+        background-color: orange;
       }
     }
   }

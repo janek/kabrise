@@ -23,11 +23,7 @@ const Video = () => {
       `}
       render={() => (
         <section id="video">
-          <VideoWrapper>
-            <VideoPlayer loop muted playsinline>
-              <source src={BriseVideo} type="video/mp4" />
-            </VideoPlayer>
-          </VideoWrapper>
+          <VideoWrapper></VideoWrapper>
         </section>
       )}
     />
@@ -37,6 +33,7 @@ const Video = () => {
 const VideoWrapper = styled.div`
   min-height: 500px;
   background-color: grey;
+  height: 100vh;
 `
 
 // XXX: We most likely need media queries for mobile screens
@@ -44,7 +41,6 @@ const VideoWrapper = styled.div`
 const VideoPlayer = styled.video`
   object-fit: cover;
   width: 100vw;
-  height: 100vh;
 
   top: 0;
   left: 0;
