@@ -4,7 +4,7 @@ import Layout from "@common/Layout"
 import Navbar from "@common/Navbar"
 import Sidebar from "@common/Sidebar"
 import SocialIcons from "@common/SocialIcons"
-import Blendor from "@common/SocialIcons"
+import Blendor from "@common/Blendor"
 
 import Video from "@sections/Video"
 import Header from "@sections/Header"
