@@ -18,9 +18,9 @@ import Footer from "@sections/Footer"
 const IndexPage = () => (
   <Layout>
     <Blendor />
-    <Video />
     <SocialIcons />
     <Sidebar />
+    <Video />
     <Navbar />
     <Header />
     <About />
