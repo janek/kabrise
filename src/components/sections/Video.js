@@ -23,7 +23,11 @@ const Video = () => {
       `}
       render={() => (
         <section id="video">
-          <VideoWrapper></VideoWrapper>
+          <VideoWrapper>
+            <VideoPlayer loop muted playsinline autoPlay>
+              <source src={BriseVideo} type="video/mp4" />
+            </VideoPlayer>
+          </VideoWrapper>
         </section>
       )}
     />
