@@ -39,7 +39,6 @@ export const NavListWrapper = styled.div`
   font-family: ${props => props.theme.font.menu};
   ${props => props.theme.font_size.regular};
   font-size: 1.5em;
-  mix-blend-mode: exclusion;
 
   ul {
     height: 60vh;

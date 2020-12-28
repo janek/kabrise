@@ -15,7 +15,6 @@ import ExternalLink from "@common/ExternalLink"
 export const SocialMediaIconsWrapper = styled.div`
   position: fixed;
   display: flex;
-  mix-blend-mode: exclusion;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     display: none;
