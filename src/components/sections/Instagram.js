@@ -7,11 +7,7 @@ import { Container } from "@components/global"
 
 //TODO: clean up styling, make sure non-square photos fill the sqare
 const Image = styled(Img)`
-  object-fit: "cover";
-  object-position: "100% 0";
-  width: "100%";
-  height: "100%";
-  maxheight: "25rem";
+  height: 100%;
 `
 
 const A = styled.a`
@@ -55,6 +51,7 @@ const Instagram = () => {
       return (
         <A key={id} href={`${nodeURL}/${id}`}>
           <Image
+            style="height:100%"
             loading="lazy"
             alt={caption || ""}
             fluid={childImageSharp.fluid}
