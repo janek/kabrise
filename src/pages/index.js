@@ -25,7 +25,6 @@ const IndexPage = () => (
     <Project />
     <Instagram />
     <Form />
-    <Footer />
   </Layout>
 )
 

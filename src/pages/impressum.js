@@ -99,7 +99,6 @@ const ImpressumPage = () => (
         </p>
       </Container>
     </Section>
-    <Footer />
   </Layout>
 )
 
