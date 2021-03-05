@@ -28,7 +28,7 @@ const Video = () => {
               <source src={BriseVideo} type="video/mp4" />
             </VideoPlayer>
             <ScrollDownWrapper>
-              <ScrollDownButton>Scroll down</ScrollDownButton>
+              <ScrollDownLink href="#projects">Scroll down</ScrollDownLink>
               <Arrow>
                 <span></span>
                 <span></span>
@@ -69,12 +69,13 @@ const ScrollDownWrapper = styled.div`
   height: 100px;
 `
 
-const ScrollDownButton = styled.button`
+const ScrollDownLink = styled.a`
   font-size: 15px;
   text-transform: uppercase;
   color: white;
   font-weight: bold;
 `
+
 const Arrow = styled.div`
   position: absolute;
   bottom: 70px;
