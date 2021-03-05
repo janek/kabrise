@@ -86,6 +86,8 @@ const Sidebar = () => {
 
   const intl = useIntl()
 
+  //TODO: add <Language/> above NAV_ITEMS
+
   const getNavList = () => (
     <NavListWrapper>
       <Scrollspy
@@ -95,7 +97,6 @@ const Sidebar = () => {
         // test offset on different devices, adjust (maybe per-device)
         offset={-1500}
       >
-        <Language />
         {NAV_ITEMS_RAW.map(navItem => (
           <li key={navItem}>
             {getNavAnchorLink(intl.formatMessage({ id: "navbar." + navItem }))}
