@@ -72,6 +72,7 @@ const ScrollDownWrapper = styled.div`
 const ScrollDownLink = styled.a`
   font-size: 15px;
   text-transform: uppercase;
+  text-decoration: none;
   color: white;
   font-weight: bold;
 `

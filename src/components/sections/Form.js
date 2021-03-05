@@ -8,7 +8,6 @@ import ExternalLink from "@common/ExternalLink"
 import Button from "@common/Button"
 
 const Form = () => {
-  // TODO: if there aren't images, remove the StaticQuery
   return (
     <section id="contact">
       <Container>
