@@ -51,7 +51,6 @@ const Instagram = () => {
       return (
         <A key={id} href={`${nodeURL}/${id}`}>
           <Image
-            style="height:100%"
             loading="lazy"
             alt={caption || ""}
             fluid={childImageSharp.fluid}
