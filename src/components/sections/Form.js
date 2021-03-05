@@ -9,7 +9,7 @@ import Button from "@common/Button"
 
 const Form = () => {
   return (
-    <section id="contact">
+    <SectionWithBackground id="contact">
       <Container>
         <hr />
         <Grid>
@@ -49,7 +49,7 @@ const Form = () => {
           </form>
         </Grid>
       </Container>
-    </section>
+    </SectionWithBackground>
   )
 }
 
@@ -71,4 +71,7 @@ const Grid = styled.div`
   }
 `
 
+const SectionWithBackground = styled.section`
+  background-color: rgba(142, 78, 54, 0.25);
+`
 export default Form

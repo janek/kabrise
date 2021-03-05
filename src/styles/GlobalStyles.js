@@ -27,7 +27,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${props => props.theme.font.text};
-    background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=f5f3e9ff&noise=f5d349&density=5&opacity=100)
+    background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=f5f3e9ff&noise=f5d349&density=5&opacity=100);
+    margin-bottom: -20px;
   }
 
   h1, h2, h3, p {
